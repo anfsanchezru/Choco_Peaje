@@ -1,9 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import { NavbarChoco } from './components/NavbarChoco';
+import BannerChoco from './components/BannerChoco';
 
 function App() {
   return (
     <div className="App">
+      <NavbarChoco/>
+      <BannerChoco/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
