@@ -1,27 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState, useEffect } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { NavbarChoco } from './components/NavbarChoco';
 import BannerChoco from './components/BannerChoco';
+import Registro from './components/Registro';
+import User from './components/User';
+import Comofunciona from './components/Comofunciona';
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+  useNavigate
+} from "react-router-dom";
+import Login from './components/Login';
 
 function App() {
+  const [logged, setLogged] = useState(false)  
+ 
+  
   return (
     <div className="App">
-      <NavbarChoco/>
-      <BannerChoco/>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+      <NavbarChoco logged={logged} setLogged={setLogged}/>
+        <Routes>
+          <Route path="/" element={ <BannerChoco logged={logged}  setLogged={setLogged}/> }></Route>
+          <Route path="/login"  element={ <Login logged={logged}  setLogged={setLogged}/> } ></Route>
+          <Route path="/registro"  element={ <Registro/> } ></Route>
+          <Route path="/user"  element={ <User logged={logged}  setLogged={setLogged}/> } ></Route>
+          <Route path="/Comofunciona"  element={ <Comofunciona/> } ></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'react-bootstrap';
+import { useNavigate } from "react-router-dom";
 
-export default function BannerChoco() {
+export default function BannerChoco({setLogged}) {
     const imgStyle = {
         position: `absolute`,
         width: `631.11px`,
@@ -15,38 +16,39 @@ export default function BannerChoco() {
         background: `#2A98C7`,
         height: `330px`,
         display: "flex",
-        "flex-direction": "column",
-        "align-items": "flex-start",
-        "justify-content": "center"
+        flexDirection: "column",
+        alignItems: "flex-start",
+        justifyContent: "center"
 
     }
 
     const h1 = {
-        "font-size": "54px",
-        "line-height": "63px",
-        "letter-spacing": "-0.025em",
+        fontSize: "54px",
+        lineHeight: "63px",
+        letterSpacing: "-0.025em",
         color: "white"
     }
 
     const h2 = {
-        "font-size": "48px",
-        "line-height": "56px",
-        "letter-spacing": "-0.025em",
+        fontSize: "48px",
+        lineHeight: "56px",
+        letterSpacing: "-0.025em",
         color: "#97DAF8"
     }
 
     const h3 = {
-        "font-size": "48px",
-        "line-height": "56px",
-        "letter-spacing": "-0.025em",
+        fontSize: "48px",
+        lineHeight: "56px",
+        letterSpacing: "-0.025em",
         color: "#006EA0"
     }
+ 
 
     return (
         <div>
             <Container style={bannerStyle} fluid className="">
                 <Container style={bannerStyle} className="container-sm">      
-                <h1 style={h1} white>Peajes del Chocó</h1>
+                <h1 style={h1}>Peajes del Chocó</h1>
                 <h1 style={h2}>Tu tarjeta</h1>
                 <h1 style={h3}>Tu control</h1>
                 </Container>
