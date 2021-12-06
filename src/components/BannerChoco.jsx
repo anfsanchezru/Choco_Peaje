@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'react-bootstrap';
-import { useNavigate } from "react-router-dom";
 
 export default function BannerChoco({setLogged}) {
     const imgStyle = {

@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { NavbarChoco } from './components/NavbarChoco';
 import BannerChoco from './components/BannerChoco';
@@ -9,8 +9,7 @@ import Comofunciona from './components/Comofunciona';
 import {
   BrowserRouter,
   Route,
-  Routes,
-  useNavigate
+  Routes
 } from "react-router-dom";
 import Login from './components/Login';
 

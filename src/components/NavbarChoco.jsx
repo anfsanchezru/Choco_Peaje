@@ -9,12 +9,18 @@ const linkStyle = {
   letterSpacing: "-0.025em",
   color: "#6D7E8F",
   marginLeft: "40px",
-  textDecoration: "none"
+  textDecoration: "none",
 };
 
 const textStyle = {
-    fontSize: "20px",
+  fontSize: "20px",
+  color: "#6D7E8F",
+};
+
+const linkStyle2 = {
+    fontSize: "24px",
     color: "#6D7E8F",
+    textDecoration: "none"
 }
 
 const logoStyle = {
@@ -40,17 +46,14 @@ export const NavbarChoco = ({ logged, setLogged }) => {
     setuser(getUser);
     console.log(getUser);
 
-    let userState= localStorage.getItem("logged")
-       
-        if(userState==="true"){
-            setLogged(true)
-         
-        }else{
-            setLogged(false)
-        
-        }
+    let userState = localStorage.getItem("logged");
 
-      },[navigate, setLogged]);
+    if (userState === "true") {
+      setLogged(true);
+    } else {
+      setLogged(false);
+    }
+  }, []);
 
   return (
     <div>
@@ -67,21 +70,32 @@ export const NavbarChoco = ({ logged, setLogged }) => {
           <Nav className="me">
             {!logged ? (
               <>
-                <Nav.Link>
-                  <Link style={linkStyle} to="/login">
-                    Login
-                  </Link>
-                </Nav.Link>
-                <Nav.Link><Link style={linkStyle} to="/Registro">Register</Link></Nav.Link>
-                <Nav.Link><Link style={linkStyle} to="/Comofunciona">¿Cómo funciona?</Link></Nav.Link>
+                <Link style={linkStyle} to="/login">
+                  Login
+                </Link>
+                <Link style={linkStyle} to="/Registro">
+                  Register
+                </Link>
+                <Link style={linkStyle} to="/Comofunciona">
+                  ¿Cómo funciona?
+                </Link>
               </>
             ) : (
               <>
-                <Navbar.Text style={linkStyle}> Usuario: <Link style={textStyle} to="/user"> {user} </Link></Navbar.Text>
-                <Nav.Link><Link style={linkStyle} to="/Comofunciona">¿Cómo funciona?</Link></Nav.Link>
+                <Navbar.Text style={linkStyle}>
+                  Usuario:{" "}
+                  <Link style={textStyle} to="/user">
+                    {user}
+                  </Link>
+                </Navbar.Text>
+                <Navbar.Text style={linkStyle}>
+                  <Link style={linkStyle2} to="/Comofunciona">
+                    ¿Cómo funciona?
+                  </Link>
+                </Navbar.Text>
                 <Nav.Link onClick={logOut} style={linkStyle}>
                   Logout
-                </Nav.Link>                
+                </Nav.Link>
               </>
             )}
           </Nav>
