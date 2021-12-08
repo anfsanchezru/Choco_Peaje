@@ -66,9 +66,7 @@ export default function Principal() {
 
         background: '#F05B71',
         'border-radius': '25px'
-    },
-    
-
+    }
 
 return (
     <ButtonGroup>

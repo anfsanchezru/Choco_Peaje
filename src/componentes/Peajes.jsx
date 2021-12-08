@@ -59,6 +59,24 @@ export default function Principal() {
 
         background: '#F05B71',
         'border-radius': '25px'
+    },
+
+    const h2={
+        position: 'absolute',
+        width: '702px',
+        height: '48px',
+        left: '251px',
+        top: '893px',
+
+        'font-family': 'Roboto',
+        'font-style': 'normal',
+        'font-weight': 'normal',
+        'font-size': '30px',
+        'line-height': '35px',
+        'text-align': 'center',
+        'letter-spacing': '-0.025em',
+
+        color: '#000000'
     }
 
     return (
@@ -101,6 +119,63 @@ export default function Principal() {
                         <Form.Control
                             as="textarea"
                             placeholder="Ingrese la coordenada de latitud donde se encuentra el peaje"
+                        />
+                    </FloatingLabel>
+                </tr>
+                </tbody>
+            </Table>
+
+            <h2 style={h2}>Precios por Categoría de Vehículo</h2>
+
+            <Table>
+                <tbody>
+                <tr>
+                    <th scope="row">Categoría I: </th>
+                    <FloatingLabel controlId="floatingTextarea" label="" className="mb-3">
+                        <Form.Control 
+                        as="textarea" 
+                        placeholder=""
+                        style={{ width: '490px' }}
+                        />
+                    </FloatingLabel>
+                </tr>
+                <tr>
+                    <th scope="row">Categoría II: </th>
+                    <FloatingLabel controlId="floatingTextarea" label="" className="mb-3">
+                        <Form.Control 
+                        as="textarea" 
+                        placeholder=""
+                        style={{ width: '490px' }}
+                        />
+                    </FloatingLabel>
+                </tr>
+                <tr>
+                    <th scope="row">Categoría III: </th>
+                    <FloatingLabel controlId="floatingTextarea" label="" className="mb-3">
+                        <Form.Control 
+                        as="textarea" 
+                        placeholder=""
+                        style={{ width: '490px' }}
+                        />
+                    </FloatingLabel>
+                </tr>
+                <tr>
+                    <th scope="row">Categoría IV: </th>
+                    <FloatingLabel controlId="floatingTextarea" label="" className="mb-3">
+                        <Form.Control 
+                        as="textarea" 
+                        placeholder=""
+                        style={{ width: '490px' }}
+                        />
+                    </FloatingLabel>
+                </tr>
+                <tr>
+                    <th scope="row">Categoría V: </th>
+                    <FloatingLabel controlId="floatingTextarea" label="" className="mb-3">
+                        <Form.Control 
+                        as="textarea" 
+                        placeholder=""
+                        style={{ width: '490px' }}
                         />
                     </FloatingLabel>
                 </tr>
