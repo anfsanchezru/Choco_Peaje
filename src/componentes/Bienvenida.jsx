@@ -1,5 +1,4 @@
 import React from 'react'
-import 'bootstrap.min.css';
 import { Container } from 'react-bootstrap';
 
 export default function Principal() {

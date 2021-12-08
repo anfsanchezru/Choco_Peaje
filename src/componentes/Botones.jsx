@@ -1,6 +1,5 @@
-import React from 'react'
-import 'bootstrap.min.css';
-import { Container } from 'react-bootstrap';
+import React from 'react';
+import { Container, Button, ButtonGroup } from 'react-bootstrap';
 
 export default function Principal() {
 
@@ -31,18 +30,19 @@ export default function Principal() {
         
         color: '#FFFFFF'
     }
-}
 
 return (
-    <div>
-        <button type="button" class="btn btn-primary btn-lg" style={botones}>
+    <>
+        <Button style={botones}>
             <p style={p}>Consorcios</p>
-        </button>
-        <button type="button" class="btn btn-primary btn-lg" style={botones}>
+        </Button> {' '}
+        <Button style={botones}>
             <p style={p}>Peajes</p>
-        </button>
-        <button type="button" class="btn btn-primary btn-lg" style={botones}>
+        </Button> {' '}
+        <Button style={botones}>
             <p style={p}>Usuarios</p>
-        </button>
-    </div>
+        </Button> {' '}
+    </>
 )
+
+}
