@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import 'bootstrap.min.css';
-import { Button, ButtonGroup, Card, Table } from 'react-bootstrap';
+import { Button, ButtonGroup, Card, Table,FloatingLabel,Form } from 'react-bootstrap';
 
 export default function Principal() {
 
@@ -17,12 +17,6 @@ export default function Principal() {
     },
 
     const titulosSeccion1 = {
-        position: 'absolute',
-        width: '761px',
-        height: '42px',
-        left: '59px',
-        top: '732px',
-
         background: '#2A98C7',
         border: '1px solid #000000',
         'box-sizing': 'border-box',
@@ -30,17 +24,27 @@ export default function Principal() {
     },
 
     const titulosSeccion2 = {
-        position: 'absolute',
-        width: '390px',
-        height: '42px',
-        left: '956px',
-        top: '732px',
-
         background: '#F05B71',
         border: '1px solid #000000',
         'box-sizing': 'border-box',
         'box-shadow': '0px 4px 4px rgba(0, 0, 0, 0.25)'
-    }
+    },
+
+    const Seccion1 = {
+        position: 'absolute',
+        width: '761px',
+        height: '587px',
+        left: '59px',
+        top: '732px',
+    },
+
+    const Seccion2 = {
+        position: 'absolute',
+        width: '390px',
+        height: '501px',
+        left: '956px',
+        top: '732px',
+    },
 
     const boton1={
         position: 'absolute',
@@ -63,6 +67,7 @@ export default function Principal() {
         background: '#F05B71',
         'border-radius': '25px'
     },
+    
 
 
 return (
@@ -78,7 +83,7 @@ return (
         </ul>
     </ButtonGroup>,
     
-    <Card>
+    <Card style={ Seccion1 }>
     <Card.Header style={titulosSeccion1}>Información del Consorcio</Card.Header>
     <Card.Body>
         <Table>
@@ -121,16 +126,23 @@ return (
     </Card.Body>
     </Card>,
 
-    <Card>
+    <Card style={ Seccion2 }>
         <Card.Header>Peajes a cargo</Card.Header>
         <Card.Body>
         <Table>
             <tbody>
             <tr>
                 <th scope="row">Nombre: </th>
-                <FloatingLabel controlId="floatingTextarea" label="" className="mb-3">
-                    <Form.Control as="textarea" placeholder="Ingrese el nombre del peaje" />
-                </FloatingLabel>
+                <ButtonGroup>
+                    <Button class="btn btn-secondary btn-lg" type="button">
+                    </Button>
+                    <Button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" style="backgroundcolor:#2E11E3">
+                        <span class="visually-hidden">Toggle Dropdown</span>
+                    </Button>
+                    <ul class="dropdown-menu">
+                        ...
+                    </ul>
+                </ButtonGroup>
             </tr>
             <tr>
                 <th scope="row">Ubicación: </th>

@@ -3,11 +3,33 @@ import { Container, Button, ButtonGroup } from 'react-bootstrap';
 
 export default function Principal() {
 
-    const botones={
+    const boton1={
         position: 'absolute',
         width: '290px',
         height: '125px',
         left: '118px',
+        top: '1056px',
+
+        background: '#2A98C7',
+        'border-radius': '25px'
+    },
+
+    const boton2={
+        position: 'absolute',
+        width: '290px',
+        height: '125px',
+        left: '575px',
+        top: '1056px',
+
+        background: '#2A98C7',
+        'border-radius': '25px'
+    },
+
+    const boton3={
+        position: 'absolute',
+        width: '290px',
+        height: '125px',
+        left: '1032px',
         top: '1056px',
 
         background: '#2A98C7',
@@ -33,13 +55,13 @@ export default function Principal() {
 
 return (
     <>
-        <Button style={botones}>
+        <Button style={boton1}>
             <p style={p}>Consorcios</p>
         </Button> {' '}
-        <Button style={botones}>
+        <Button style={boton2}>
             <p style={p}>Peajes</p>
         </Button> {' '}
-        <Button style={botones}>
+        <Button style={boton3}>
             <p style={p}>Usuarios</p>
         </Button> {' '}
     </>
