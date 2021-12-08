@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Button, ButtonGroup } from 'react-bootstrap';
 
-export default function Principal() {
+export default function Botones() {
 
     const boton1={
         position: 'absolute',
