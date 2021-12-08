@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import React from "react";
+import UsuarioIn from './components/UsuarioIn';
+import Bienvenida from './components/Bienvenida';
+import Botones from './components/Botones';
+import Peajes from './components/Peajes';
+import Consorcios from './components/Consorcios'
+import Pagos from './components/Pagos'
+import {
+  BrowserRouter,
+  Route,
+  Routes
+} from "react-router-dom";
 
 function App() {
-  return (
+   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={ <UsuarioIn /> }></Route>
+          <Route path="/bienvenida" element={ <Bienvenida /> }></Route>
+          <Route path="/botones" element={ <Botones /> }></Route>
+          <Route path="/peajes" element={ <Peajes /> }></Route>
+          <Route path="/consorcios" element={ <Consorcios /> }></Route>
+          <Route path="/pagos" element={ <Pagos /> }></Route>
+          </Routes>
+      </BrowserRouter>
     </div>
   );
 }
