@@ -12,7 +12,7 @@ export default function Botones() {
 
         background: '#2A98C7',
         'border-radius': '25px'
-    },
+    }
 
     const boton2={
         position: 'absolute',
@@ -23,7 +23,7 @@ export default function Botones() {
 
         background: '#2A98C7',
         'border-radius': '25px'
-    },
+    }
 
     const boton3={
         position: 'absolute',
@@ -34,7 +34,7 @@ export default function Botones() {
 
         background: '#2A98C7',
         'border-radius': '25px'
-    },
+    }
 
     const p = {
         position: 'absolute',

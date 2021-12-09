@@ -80,113 +80,117 @@ export default function Peajes() {
     }
 
     return (
-        <ButtonGroup>
-            <Button class="btn btn-secondary btn-lg" type="button" style={barraBusqueda}>
-                Escriba el peaje que desea buscar...
-            </Button>
-            <Button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" style="backgroundcolor:#2E11E3">
-                <span class="visually-hidden">Toggle Dropdown</span>
-            </Button>
-            <ul class="dropdown-menu">
-                ...
-            </ul>
-        </ButtonGroup>,
+        
+        <div className="PeajeAdm">
+            <ButtonGroup>
+                <Button class="btn btn-secondary btn-lg" type="button" style={barraBusqueda}>
+                    Escriba el peaje que desea buscar...
+                </Button>
+                <Button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" style="backgroundcolor:#2E11E3">
+                    <span class="visually-hidden">Toggle Dropdown</span>
+                </Button>
+                <ul class="dropdown-menu">
+                    ...
+                </ul>
+            </ButtonGroup>
 
-        <Card style={ Seccion1 }>
-        <Card.Header style={titulosSeccion1}>Información del Consorcio</Card.Header>
-        <Card.Body>
-            <Table>
-                <tbody>
-                <tr>
-                    <th scope="row">Nombre: </th>
-                    <FloatingLabel controlId="floatingTextarea" label="" className="mb-3">
-                        <Form.Control as="textarea" placeholder="Ingrese el nombre del creador del Consorcio" />
-                    </FloatingLabel>
-                </tr>
-                <tr>
-                    <th scope="row">Ubicación: </th>
-                </tr>
-                <tr>
-                    <th scope="row">Longitud: </th>
-                    <FloatingLabel controlId="floatingTextarea2" label="">
-                        <Form.Control
-                            as="textarea"
-                            placeholder="Ingrese la coordenada de longitud donde se encuentra el peaje"
-                        />
-                    </FloatingLabel>
-                    <th scope="row">Latitud: </th>
-                    <FloatingLabel controlId="floatingTextarea2" label="">
-                        <Form.Control
-                            as="textarea"
-                            placeholder="Ingrese la coordenada de latitud donde se encuentra el peaje"
-                        />
-                    </FloatingLabel>
-                </tr>
-                </tbody>
-            </Table>
+            <Card style={ Seccion1 }>
+                <Card.Header style={titulosSeccion1}>Información del Consorcio</Card.Header>
+                <Card.Body>
+                    <Table>
+                        <tbody>
+                        <tr>
+                            <th scope="row">Nombre: </th>
+                            <FloatingLabel controlId="floatingTextarea" label="" className="mb-3">
+                                <Form.Control as="textarea" placeholder="Ingrese el nombre del creador del Consorcio" />
+                            </FloatingLabel>
+                        </tr>
+                        <tr>
+                            <th scope="row">Ubicación: </th>
+                        </tr>
+                        <tr>
+                            <th scope="row">Longitud: </th>
+                            <FloatingLabel controlId="floatingTextarea2" label="">
+                                <Form.Control
+                                    as="textarea"
+                                    placeholder="Ingrese la coordenada de longitud donde se encuentra el peaje"
+                                />
+                            </FloatingLabel>
+                            <th scope="row">Latitud: </th>
+                            <FloatingLabel controlId="floatingTextarea2" label="">
+                                <Form.Control
+                                    as="textarea"
+                                    placeholder="Ingrese la coordenada de latitud donde se encuentra el peaje"
+                                />
+                            </FloatingLabel>
+                        </tr>
+                        </tbody>
+                    </Table>
 
-            <h2 style={h2}>Precios por Categoría de Vehículo</h2>
+                    <h2 style={h2}>Precios por Categoría de Vehículo</h2>
 
-            <Table>
-                <tbody>
-                <tr>
-                    <th scope="row">Categoría I: </th>
-                    <FloatingLabel controlId="floatingTextarea" label="" className="mb-3">
-                        <Form.Control 
-                        as="textarea" 
-                        placeholder=""
-                        style={{ width: '490px' }}
-                        />
-                    </FloatingLabel>
-                </tr>
-                <tr>
-                    <th scope="row">Categoría II: </th>
-                    <FloatingLabel controlId="floatingTextarea" label="" className="mb-3">
-                        <Form.Control 
-                        as="textarea" 
-                        placeholder=""
-                        style={{ width: '490px' }}
-                        />
-                    </FloatingLabel>
-                </tr>
-                <tr>
-                    <th scope="row">Categoría III: </th>
-                    <FloatingLabel controlId="floatingTextarea" label="" className="mb-3">
-                        <Form.Control 
-                        as="textarea" 
-                        placeholder=""
-                        style={{ width: '490px' }}
-                        />
-                    </FloatingLabel>
-                </tr>
-                <tr>
-                    <th scope="row">Categoría IV: </th>
-                    <FloatingLabel controlId="floatingTextarea" label="" className="mb-3">
-                        <Form.Control 
-                        as="textarea" 
-                        placeholder=""
-                        style={{ width: '490px' }}
-                        />
-                    </FloatingLabel>
-                </tr>
-                <tr>
-                    <th scope="row">Categoría V: </th>
-                    <FloatingLabel controlId="floatingTextarea" label="" className="mb-3">
-                        <Form.Control 
-                        as="textarea" 
-                        placeholder=""
-                        style={{ width: '490px' }}
-                        />
-                    </FloatingLabel>
-                </tr>
-                </tbody>
-            </Table>
+                    <Table>
+                        <tbody>
+                        <tr>
+                            <th scope="row">Categoría I: </th>
+                            <FloatingLabel controlId="floatingTextarea" label="" className="mb-3">
+                                <Form.Control 
+                                as="textarea" 
+                                placeholder=""
+                                style={{ width: '490px' }}
+                                />
+                            </FloatingLabel>
+                        </tr>
+                        <tr>
+                            <th scope="row">Categoría II: </th>
+                            <FloatingLabel controlId="floatingTextarea" label="" className="mb-3">
+                                <Form.Control 
+                                as="textarea" 
+                                placeholder=""
+                                style={{ width: '490px' }}
+                                />
+                            </FloatingLabel>
+                        </tr>
+                        <tr>
+                            <th scope="row">Categoría III: </th>
+                            <FloatingLabel controlId="floatingTextarea" label="" className="mb-3">
+                                <Form.Control 
+                                as="textarea" 
+                                placeholder=""
+                                style={{ width: '490px' }}
+                                />
+                            </FloatingLabel>
+                        </tr>
+                        <tr>
+                            <th scope="row">Categoría IV: </th>
+                            <FloatingLabel controlId="floatingTextarea" label="" className="mb-3">
+                                <Form.Control 
+                                as="textarea" 
+                                placeholder=""
+                                style={{ width: '490px' }}
+                                />
+                            </FloatingLabel>
+                        </tr>
+                        <tr>
+                            <th scope="row">Categoría V: </th>
+                            <FloatingLabel controlId="floatingTextarea" label="" className="mb-3">
+                                <Form.Control 
+                                as="textarea" 
+                                placeholder=""
+                                style={{ width: '490px' }}
+                                />
+                            </FloatingLabel>
+                        </tr>
+                        </tbody>
+                    </Table>
 
-            <Button style={boton1}>Editar</Button> {' '}
-            <Button style={boton2}>Eliminar</Button> {' '}
+                    <Button style={boton1}>Editar</Button> {' '}
+                    <Button style={boton2}>Eliminar</Button> {' '}
 
-        </Card.Body>
-        </Card>
+                </Card.Body>
+            </Card>
 
+        </div>
+    
     )
 }
