@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
+import styled from "styled-components";
 
 const linkStyle = {
   fontSize: "24px",
@@ -11,6 +12,12 @@ const linkStyle = {
   marginLeft: "40px",
   textDecoration: "none",
 };
+
+const styledLink = styled(Link)` 
+  &:hover {
+    color: red;
+  }
+`;
 
 const textStyle = {
   fontSize: "20px",
@@ -26,6 +33,11 @@ const linkStyle2 = {
 const logoStyle = {
   cursor: "pointer",
 };
+
+const divHeight = {
+  height: "78px",  
+  borderBottom: "2px solid silver"
+}
 
 export const NavbarChoco = ({ logged, setLogged }) => {
   let navigate = useNavigate();
@@ -57,7 +69,7 @@ export const NavbarChoco = ({ logged, setLogged }) => {
 
   return (
     <div>
-      <Navbar bg="light" variant="light">
+      <Navbar bg="light" variant="light" fixed="top" style={divHeight}>
         <Container>
           <Navbar.Brand onClick={irHome}>
             <img
@@ -71,7 +83,7 @@ export const NavbarChoco = ({ logged, setLogged }) => {
             {!logged ? (
               <>
                 <Link style={linkStyle} to="/login">
-                  Login
+                  <styledLink>Login</styledLink>
                 </Link>
                 <Link style={linkStyle} to="/Registro">
                   Register
@@ -101,6 +113,7 @@ export const NavbarChoco = ({ logged, setLogged }) => {
           </Nav>
         </Container>
       </Navbar>
+      <div style={divHeight}></div>
     </div>
   );
 };
