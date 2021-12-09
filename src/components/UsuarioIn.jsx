@@ -1,5 +1,6 @@
 import React from "react";
-import { Container, Button, ButtonGroup } from 'react-bootstrap';
+import { Container, Button, ButtonGroup, Col } from 'react-bootstrap';
+import { PagosStyled, StyledCard } from "./styled/Pagos.styled";
 
 export default function UsuarioIn() {
     const cont = {
@@ -50,8 +51,6 @@ export default function UsuarioIn() {
             background: '#2A98C7',
             height: '90x',
             width: '180px', 
-            left: '936px',
-            top: '995px',
             'border-radius': '25px',
         
             'font-family': 'Roboto',
@@ -66,21 +65,24 @@ export default function UsuarioIn() {
        
         
     return (
+        <PagosStyled>
+        <StyledCard>
         <div>
-            <Container style={cont} fluid className=""></Container>
-            <Container style={cont} fluid className="row"></Container>
-            <Container style={cont2} fluid className="col"></Container>
+            <Col sm="10">
             <p style={p1}>Bienvenido Usuario interno</p>
             <p style={p2}> Por favor seleccione el trámite que desea realizar</p>
-            <>
+            
             <ButtonGroup className="mb-2">
             <Button style={butt}>Consorcio</Button>
             <Button style={butt}>Peajes</Button>
             <Button style={butt}>Pago</Button>
             </ButtonGroup>
-            </>
+            
             {/* <img style={imgStyle} src=".\public\img\car.jpg" alt="car" height="300px"/> */}
+            </Col>
         </div>
-                
+        
+        </StyledCard>       
+        </PagosStyled>      
         )
 }

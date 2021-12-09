@@ -1,24 +1,14 @@
 import React from "react";
-import { Container, Button, label, input,Dropdown, Form  } from 'react-bootstrap';
+import { Container, Button, label, input,Dropdown, Form, Col  } from 'react-bootstrap';
+import { PagosStyled, StyledCard } from "./styled/Pagos.styled";
 
 export default function Peajes() {
-    // const cont ={
-    //     'background-color':' #F1FAFE',
-    //     'padding-left':' 100px',
-    //     'position':'absolute', 
-    //     width: '2440px',
-    //     height: '1000px', 
-    //     left: '0px', 
-    //     top: '380px'       
-    // }
+    
     const cont1 ={
         'background-color': '#F1FAFE',
         'padding-left': '100px',
         'position':'absolute', 
-        // width: '1440px',
-        // height: '465px', 
-        // left: '0px',
-        // top: '380px'
+        
     }
     const cont2 ={
        
@@ -67,7 +57,6 @@ export default function Peajes() {
         'font-family':'Roboto',
         'font-size': '30px',
         'font-style': 'normal',
-        'padding-left': '200px',
         'font-size': '24px',
         'font-style': 'normal',
         'font-weight': '300',
@@ -94,7 +83,10 @@ export default function Peajes() {
     }
     
     return (
+        <PagosStyled>
+        <StyledCard>
         <div>
+            <Col sm="10">
             <Container  fluid className=""></Container>
             <Container fluid className="row"></Container>
             <Container style={cont1} fluid className="col"></Container>
@@ -102,11 +94,11 @@ export default function Peajes() {
             <p style={p1}> Pagos</p>
             <p style={p2}> Ingrese todos los datos correspondientes: (Los campos indicados con * son obligatorios)</p>
             </div>
-
+            <br />
             <div>
             <label for="text" style={lab}>Placas del Vehículo *</label>
             <input type="text"></input> 
-                        
+            <br />            
             <>
             <label for="text" style={lab}>Seleccione método de pago*</label> 
             <Form.Select size="lg">
@@ -124,6 +116,7 @@ export default function Peajes() {
             <Container fluid className="" style={cont2}> 
             <label for="text" style={lab}>Usuario</label>
             <input type="text"></input> 
+            <br />
             <label for="text" style={lab}>Categoría del Vehículo</label>
             <input type="text"></input> 
             <br />
@@ -136,14 +129,14 @@ export default function Peajes() {
             <br />
             <p style={p1}> Recargas</p>
             <p style={p2}> Ingrese todos los datos correspondientes: (Los campos indicados con * son obligatorios)</p>
-            
+            <br />
             <label for="text" style={lab}>Usuario*</label>
             <input type="text"></input> 
             <label for="text" style={lab}>Valor a recargar*</label>
             <input type="text"></input>
              <br />
             
-            
+            <br />
             <label for="text" style={lab}>Seleccione método de pago*</label> 
             <Form.Select size="lg">
                 <option>Efectivo</option>
@@ -152,10 +145,11 @@ export default function Peajes() {
             <br />
             <br />   
             <Button style={butt}>Recargar</Button>
-           
+            </Col>
         </div>
-               
-              
+        
+        </StyledCard>       
+        </PagosStyled>     
 
         )
     } 

@@ -14,6 +14,10 @@ import Login from './components/Login';
 import Pagos from './components/Pagos';
 import { Container1 } from './components/styled/Container.styled';
 import Reportes from './components/Reportes';
+import PagosIn from './components/PagosIn';
+import PeajesIn from './components/PeajesIn';
+import UsuarioIn from './components/UsuarioIn';
+import ConsorciosIn from './components/ConsorciosIn';
 
 
 
@@ -39,6 +43,10 @@ function App() {
           <Route path="/Comofunciona"  element={ <Comofunciona/> } ></Route>
           <Route path="/pagos"  element={ <Pagos/> } ></Route>
           <Route path="/reportes"  element={ <Reportes/> } ></Route>
+          <Route path="/pagosin"  element={ <PagosIn/> } ></Route>
+          <Route path="/peajesin"  element={ <PeajesIn/> } ></Route>
+          <Route path="/usuarioin"  element={ <UsuarioIn/> } ></Route>
+          <Route path="/consorciosin"  element={ <ConsorciosIn/> } ></Route>
         </Routes>
       
       

@@ -1,16 +1,9 @@
 import React from "react";
-import { Container, Button, label, input, textarea, Form  } from 'react-bootstrap';
+import { Container, Button, label, input, textarea, Form, Col  } from 'react-bootstrap';
+import { PagosStyled, StyledCard } from "./styled/Pagos.styled";
 
 export default function Peajes() {
-    // const cont ={
-    //     'background-color':' #F1FAFE',
-    //     'padding-left':' 100px',
-    //     'position':'absolute', 
-    //     width: '2440px',
-    //     height: '1000px', 
-    //     left: '0px', 
-    //     top: '380px'       
-    // }
+    
     const cont1 ={
         'background-color': '#F1FAFE',
         'padding-left': '100px',
@@ -56,7 +49,6 @@ export default function Peajes() {
         'font-family':'Roboto',
         'font-size': '30px',
         'font-style': 'normal',
-        'padding-left': '200px',
         'font-size': '24px',
         'font-style': 'normal',
         'font-weight': '300',
@@ -84,14 +76,14 @@ export default function Peajes() {
     
 
     return (
+        <PagosStyled>
+        <StyledCard>
         <div>
-           
-            {/* <Container  fluid className=""></Container>
-            <Container fluid className="row"></Container>
-            <Container style={cont1} fluid className="col"></Container> */}
+            <Col sm="10">
+
             <p style={p1}> Crear consorcio</p>
             <p style={p2}> Ingrese todos los datos correspondientes: (Los campos indicados con * son obligatorios)</p>
-            
+            <br />
             <label for="text" style={lab}>Nombre del Consorcio*</label>
             <input type="text"></input> 
              <br />
@@ -103,10 +95,11 @@ export default function Peajes() {
             <div>
             <Button style={butt}>Crear Consorcio</Button>
             </div>
+        </Col>
         </div>
-               
-              
-
+        
+        </StyledCard>       
+        </PagosStyled> 
         )
     } 
       

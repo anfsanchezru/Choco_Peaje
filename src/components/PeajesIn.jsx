@@ -1,16 +1,9 @@
 import React from "react";
-import { Container, Button, label, input,Dropdown, Form  } from 'react-bootstrap';
+import { Container, Button, label, input,Dropdown, Form, Col  } from 'react-bootstrap';
+import { PagosStyled, StyledCard } from "./styled/Pagos.styled";
 
 export default function Peajes() {
-    // const cont ={
-    //     'background-color':' #F1FAFE',
-    //     'padding-left':' 100px',
-    //     'position':'absolute', 
-    //     width: '2440px',
-    //     height: '1000px', 
-    //     left: '0px', 
-    //     top: '380px'       
-    // }
+    
     const cont1 ={
         'background-color': '#F1FAFE',
         'padding-left': '100px',
@@ -56,7 +49,6 @@ export default function Peajes() {
         'font-family':'Roboto',
         'font-size': '30px',
         'font-style': 'normal',
-        'padding-left': '200px',
         'font-size': '24px',
         'font-style': 'normal',
         'font-weight': '300',
@@ -96,13 +88,14 @@ export default function Peajes() {
     }
 
     return (
+        <PagosStyled>
+        <StyledCard>
         <div>
-           
-            {/* <Container  fluid className=""></Container>
-            <Container fluid className="row"></Container>
-            <Container style={cont1} fluid className="col"></Container> */}
+            <Col sm="10">
+                       
             <p style={p1}> Crear Peaje</p>
             <p style={p2}> Ingrese todos los datos correspondientes: (Los campos indicados con * son obligatorios)</p>
+            <br />            
             <div>
             <label for="text" style={lab}>Nombre del peaje*</label>
             <input type="text"></input> 
@@ -118,6 +111,7 @@ export default function Peajes() {
             </Form.Select>
             </>
             </div>
+            <br />
             <div>
             <label for="text" style={lab}>Valor del peaje según tipo de vehiculo:*</label>
             <table striped bordered hover style={tabl}>
@@ -160,10 +154,11 @@ export default function Peajes() {
             <div>
             <Button style={butt}>Crear peaje</Button>
             </div>
+            </Col>
         </div>
-               
-              
-
+        
+        </StyledCard>       
+        </PagosStyled> 
         )
     } 
       
