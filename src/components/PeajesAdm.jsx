@@ -1,28 +1,21 @@
 import React from 'react';
-import { Button, ButtonGroup, Card, Table,FloatingLabel,Form } from 'react-bootstrap';
+import { Button, InputGroup, Card, Table,FloatingLabel,Form,FormControl,DropdownButton,Dropdown } from 'react-bootstrap';
 import { PagosStyled, StyledCard } from "./styled/Pagos.styled";
 
 export default function Peajes() {
     
-    const barraBusqueda = {
-        position: 'absolute',
-        width: '869px',
-        height: '52px',
-        left: '219px',
-        top: '552px',
+    // const barraBusqueda = {
+    //     width: '490px',
+    //     height: '40px',
+    //     left: '219px',
 
-        background: '#FDFDFD',
-        border: '1px solid #000000',
-        'box-sizing': 'border-box'
-    }
+
+    //     background: '#FDFDFD',
+    //     border: '1px solid #000000',
+    //     'box-sizing': 'border-box'
+    // }
 
     const titulosSeccion1 = {
-        position: 'absolute',
-        width: '766px',
-        height: '57px',
-        left: '219px',
-        top: '699px',
-
         background: '#2A98C7',
         border: '1px solid #000000',
         'box-sizing': 'border-box',
@@ -32,10 +25,8 @@ export default function Peajes() {
     const Seccion1 = {
         position: 'absolute',
         width: '767px',
-        height: '650px',
-        left: '219px',
-        top: '700px',
-
+        height: '750px',
+        top: '550px',
         background: '#F1FAFE'
     }
 
@@ -43,8 +34,8 @@ export default function Peajes() {
         position: 'absolute',
         width: '246px',
         height: '59px',
-        left: '289px',
-        top: '1264px',
+        left: '50px',
+
 
         background: '#D6A25E',
         'border-radius': '25px'
@@ -54,8 +45,8 @@ export default function Peajes() {
         position: 'absolute',
         width: '246px',
         height: '59px',
-        left: '678px',
-        top: '1264px',
+        left: '400px',
+
 
         background: '#F05B71',
         'border-radius': '25px'
@@ -63,8 +54,6 @@ export default function Peajes() {
 
     const h2={
 
-        'font-family': 'Roboto',
-        'font-style': 'normal',
         'font-weight': 'normal',
         'font-size': '30px',
         'line-height': '35px',
@@ -74,10 +63,21 @@ export default function Peajes() {
         color: '#000000'
     }
 
+    const h3={
+        'font-weight': 'bold',
+        'font-size': '20px',
+        'line-height': '35px',
+        'text-align': 'center',
+        'letter-spacing': '-0.025em',
+
+        color: '#000000'
+    }
+
     return (
+        <PagosStyled>
 
         <div className="PeajeAdm">
-            <ButtonGroup>
+            {/* <ButtonGroup>
                 <Button class="btn btn-secondary btn-lg" type="button">
                     Escriba el peaje que desea buscar...
                 </Button>
@@ -87,10 +87,23 @@ export default function Peajes() {
                 <ul class="dropdown-menu">
                     ...
                 </ul>
-            </ButtonGroup>
+            </ButtonGroup> */}
+            <InputGroup className="mb-3">
+                <FormControl 
+                aria-label="Text input with dropdown button"
+                placeholder="Peaje que desea buscar" />
+                <DropdownButton
+                variant="outline-secondary"
+                title="Buscar"
+                id="input-group-dropdown-2"
+                align="end"
+                >
+                <Dropdown.Item href="#">...</Dropdown.Item>
+                </DropdownButton>
+            </InputGroup>
 
             <Card style={ Seccion1 }>
-                <Card.Header style={titulosSeccion1}>Información del Consorcio</Card.Header>
+                <Card.Header style={titulosSeccion1}><h2 style={h2}>Información del Consorcio</h2></Card.Header>
                 <Card.Body>
                     <Table>
                         <tbody>
@@ -130,7 +143,7 @@ export default function Peajes() {
                         <thead>
                             <tr>
                                 <th colSpan={'3'}>
-                                    <h2 style={h2}>Precios por Categoría de Vehículo</h2>
+                                    <h2 style={h3}>Precios por Categoría de Vehículo</h2>
                                 </th>
                             </tr>
                         </thead>
@@ -195,6 +208,8 @@ export default function Peajes() {
             </Card>
 
         </div>
-    
+
+        </PagosStyled>
+
     )
 }

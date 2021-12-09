@@ -1,5 +1,6 @@
 import React from 'react';
-import { Container, Table, Button, Card, ButtonGroup } from 'react-bootstrap';
+import { Button, InputGroup, Card, Table,FloatingLabel,Form,FormControl,DropdownButton,Dropdown } from 'react-bootstrap';
+import { PagosStyled, StyledCard } from "./styled/Pagos.styled";
 
 export default function Usuarios() {
 
@@ -16,6 +17,7 @@ export default function Usuarios() {
     }
 
     const titulosSeccion1 = {
+        height: '40px',
         background: '#F05B71',
         border: '1px solid #000000',
         'box-sizing': 'border-box',
@@ -30,12 +32,6 @@ export default function Usuarios() {
     }
 
     const titulosSeccion3 = {
-        position: 'absolute',
-        width: '422.62px',
-        height: '42px',
-        left: '525px',
-        top: '999px',
-
         background: '#2A98C7',
         border: '1px solid #000000',
         'box-sizing': 'border-box',
@@ -45,77 +41,103 @@ export default function Usuarios() {
     const Seccion1 = {
         position: 'absolute',
         width: '422px',
-        height: '227px',
-        left: '127px',
-        top: '710px',
+        height: '255px',
+        left: '200px',
+        top: '550px',
     }
 
     const Seccion2 = {
         position: 'absolute',
         width: '390px',
-        height: '197px',
-        left: '939px',
-        top: '710px',
+        height: '206px',
+        left: '802px',
+        top: '570px',
     }
 
     const Seccion3 = {
         position: 'absolute',
         width: '390px',
-        height: '147px',
+        height: '151px',
         left: '525px',
-        top: '999px',
+        top: '830px',
+    }
+
+    const h2={
+
+        'font-weight': 'bold',
+        'font-size': '20px',
+        'line-height': '35px',
+        'text-align': 'center',
+        'letter-spacing': '-0.025em',
+
+        color: '#000000'
     }
 
 return (
         
+    <PagosStyled>
     <div className="UsuarioAdm">
-        <ButtonGroup>
-            <Button class="btn btn-secondary btn-lg" type="button" style={barraBusqueda}>
-                Escriba el usuario que quiere buscar...
-            </Button>
-            <Button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" style="backgroundcolor:#2E11E3">
-                <span class="visually-hidden">Toggle Dropdown</span>
-            </Button>
-            <ul class="dropdown-menu">
-                ...
-            </ul>
-        </ButtonGroup>
+        <InputGroup className="mb-3">
+                <FormControl 
+                aria-label="Text input with dropdown button"
+                placeholder="Usuario que desea buscar"
+                style={{height:'50px'}} />
+                <DropdownButton
+                variant="outline-secondary"
+                title="Buscar"
+                id="input-group-dropdown-2"
+                align="end"
+                >
+                <Dropdown.Item href="#">...</Dropdown.Item>
+                </DropdownButton>
+        </InputGroup>
+
         <Card style={Seccion1}>
-            <Card.Header style={titulosSeccion1}>Información de Usuario</Card.Header>
+            <Card.Header  class='text-centered  text-justify' style={titulosSeccion1}><h2 style={h2}>Información de Usuario</h2></Card.Header>
             <Card.Body>
-                <Table striped bordered hover>
+                <Table >
                     <tbody>
                         <tr>
-                            <th scope="row">Nombre: </th>
-                            <input type="text" class="form-control" id="nombreInput" aria-describedby="nameHelp"></input>
+                            <th scope="row" class="text-center">Nombre: </th>
+                            <FloatingLabel controlId="floatingTextarea" label="" className="mb-3">
+                                <Form.Control 
+                                as="textarea" 
+                                placeholder="" 
+                                style={{ width: '260px', height: '30px' }}/>
+                            </FloatingLabel>
                         </tr>
                         <tr>
                             <th scope="row">Consorcios: </th>
-                            <div class="btn-group">
-                                <Button class="btn btn-secondary btn-lg" type="button" style={barraBusqueda}>
-                                    Consorcio
-                                </Button>
-                                <Button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" style="backgroundcolor:#2E11E3">
-                                    <span class="visually-hidden">Toggle Dropdown</span>
-                                </Button>
-                                <ul class="dropdown-menu">
-                                    ...
-                                </ul>
-                            </div>
+                            <InputGroup className="mb-3">
+                                <FormControl 
+                                aria-label="Text input with dropdown button"
+                                style={{height:'38px', width:'200px'}}
+                                 />
+                                <DropdownButton
+                                variant="outline-secondary"
+                                title=""
+                                id="input-group-dropdown-2"
+                                align="end"
+                                >
+                                <Dropdown.Item href="#">...</Dropdown.Item>
+                                </DropdownButton>
+                        </InputGroup>
                         </tr>
                         <tr>
                             <th scope="row">Peajes: </th>
-                            <div class="btn-group">
-                                <Button class="btn btn-secondary btn-lg" type="button" style={barraBusqueda}>
-                                    Peaje
-                                </Button>
-                                <Button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" style="backgroundcolor:#2E11E3">
-                                    <span class="visually-hidden">Toggle Dropdown</span>
-                                </Button>
-                                <ul class="dropdown-menu">
-                                    ...
-                                </ul>
-                            </div>
+                            <InputGroup className="mb-3">
+                                <FormControl 
+                                aria-label="Text input with dropdown button"
+                                placeholder="" />
+                                <DropdownButton
+                                variant="outline-secondary"
+                                title=""
+                                id="input-group-dropdown-2"
+                                align="end"
+                                >
+                                <Dropdown.Item href="#">...</Dropdown.Item>
+                                </DropdownButton>
+                            </InputGroup>
                         </tr>
                     </tbody>
                 </Table>  
@@ -123,17 +145,27 @@ return (
         </Card>
 
         <Card style={Seccion2}>
-            <Card.Header style={titulosSeccion2}>Cobros recogidos por medio de pago</Card.Header>
+            <Card.Header class='text-centered  text-justify' style={titulosSeccion2}><h2 style={h2}>Cobros recogidos por medio de pago</h2></Card.Header>
             <Card.Body>
                 <Table>
                     <tbody>
                         <tr>
                             <th scope="row">Efectivo: </th>
-                            <input type="text" class="form-control" id="efectivoInput" aria-describedby="efectivoHelp"></input>
+                            <FloatingLabel controlId="floatingTextarea" label="" className="mb-3">
+                                <Form.Control 
+                                as="textarea" 
+                                placeholder="" 
+                                style={{ width: '260px', height: '30px' }}/>
+                            </FloatingLabel>
                         </tr>
                         <tr>
                             <th scope="row">Tarjeta: </th>
-                            <input type="text" class="form-control" id="tarjetaInput" aria-describedby="tarjetaHelp"></input>
+                            <FloatingLabel controlId="floatingTextarea" label="" className="mb-3">
+                                <Form.Control 
+                                as="textarea" 
+                                placeholder="" 
+                                style={{ width: '260px', height: '30px' }}/>
+                            </FloatingLabel>
                         </tr>
                     </tbody>
                 </Table>
@@ -141,18 +173,24 @@ return (
         </Card>
 
         <Card style={Seccion3}>
-            <Card.Header style={titulosSeccion3}>Recargas realizadas</Card.Header>
+            <Card.Header style={titulosSeccion3}> <h2 style={h2}>Recargas realizadas</h2></Card.Header>
             <Card.Body>
                 <Table>
-                        <tbody>
+                        <tbody class='text-justify'>
                         <tr>
                             <th scope="row">Recargas</th>
-                            <input type="text" class="form-control" id="recargasInput" aria-describedby="recargasHelp"></input>
+                            <FloatingLabel controlId="floatingTextarea" label="" className="mb-3">
+                                <Form.Control 
+                                as="textarea" 
+                                placeholder="" 
+                                style={{ width: '260px', height: '20px' }}/>
+                            </FloatingLabel>
                         </tr>
                         </tbody>
                 </Table>
             </Card.Body>
         </Card>
     </div>
+    </PagosStyled>
 )
 }
