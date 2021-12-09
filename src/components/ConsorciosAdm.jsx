@@ -1,5 +1,4 @@
 import React from 'react';
-import 'bootstrap.min.css';
 import { Button, ButtonGroup, Card, Table,FloatingLabel,Form } from 'react-bootstrap';
 
 export default function Consorcios() {

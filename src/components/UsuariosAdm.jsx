@@ -1,5 +1,4 @@
 import React from 'react';
-import 'bootstrap.min.css';
 import { Container, Table, Button, Card, ButtonGroup } from 'react-bootstrap';
 
 export default function Usuarios() {

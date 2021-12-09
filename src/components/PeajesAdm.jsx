@@ -1,6 +1,6 @@
 import React from 'react';
-import 'bootstrap.min.css';
 import { Button, ButtonGroup, Card, Table,FloatingLabel,Form } from 'react-bootstrap';
+import { PagosStyled, StyledCard } from "./styled/Pagos.styled";
 
 export default function Peajes() {
     
@@ -14,10 +14,10 @@ export default function Peajes() {
         background: '#FDFDFD',
         border: '1px solid #000000',
         'box-sizing': 'border-box'
-    },
+    }
 
     const titulosSeccion1 = {
-        position: 'fixed',
+        position: 'absolute',
         width: '766px',
         height: '57px',
         left: '219px',
@@ -27,17 +27,17 @@ export default function Peajes() {
         border: '1px solid #000000',
         'box-sizing': 'border-box',
         'box-shadow': '0px 4px 4px rgba(0, 0, 0, 0.25)'
-    },
+    }
 
     const Seccion1 = {
         position: 'absolute',
         width: '767px',
-        height: '564px',
+        height: '650px',
         left: '219px',
         top: '700px',
 
         background: '#F1FAFE'
-    },
+    }
 
     const boton1={
         position: 'absolute',
@@ -48,7 +48,7 @@ export default function Peajes() {
 
         background: '#D6A25E',
         'border-radius': '25px'
-    },
+    }
 
     const boton2={
         position: 'absolute',
@@ -59,14 +59,9 @@ export default function Peajes() {
 
         background: '#F05B71',
         'border-radius': '25px'
-    },
+    }
 
     const h2={
-        position: 'absolute',
-        width: '702px',
-        height: '48px',
-        left: '251px',
-        top: '893px',
 
         'font-family': 'Roboto',
         'font-style': 'normal',
@@ -80,13 +75,13 @@ export default function Peajes() {
     }
 
     return (
-        
+
         <div className="PeajeAdm">
             <ButtonGroup>
-                <Button class="btn btn-secondary btn-lg" type="button" style={barraBusqueda}>
+                <Button class="btn btn-secondary btn-lg" type="button">
                     Escriba el peaje que desea buscar...
                 </Button>
-                <Button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" style="backgroundcolor:#2E11E3">
+                <Button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" style={{backgroundcolor:'#2E11E3'}}>
                     <span class="visually-hidden">Toggle Dropdown</span>
                 </Button>
                 <ul class="dropdown-menu">
@@ -101,35 +96,44 @@ export default function Peajes() {
                         <tbody>
                         <tr>
                             <th scope="row">Nombre: </th>
+                            <th colSpan={'3'}>
                             <FloatingLabel controlId="floatingTextarea" label="" className="mb-3">
-                                <Form.Control as="textarea" placeholder="Ingrese el nombre del creador del Consorcio" />
+                                <Form.Control as="textarea" placeholder="Ingrese el nombre del creador del Consorcio" style={{ width: '490px', height: '30px' }}/>
                             </FloatingLabel>
+                            </th>
                         </tr>
                         <tr>
                             <th scope="row">Ubicación: </th>
                         </tr>
                         <tr>
                             <th scope="row">Longitud: </th>
-                            <FloatingLabel controlId="floatingTextarea2" label="">
+                            <FloatingLabel controlId="floatingTextarea2" label="" >
                                 <Form.Control
                                     as="textarea"
                                     placeholder="Ingrese la coordenada de longitud donde se encuentra el peaje"
+                                    style={{ width: '240px', height: '30px' }}
                                 />
                             </FloatingLabel>
                             <th scope="row">Latitud: </th>
-                            <FloatingLabel controlId="floatingTextarea2" label="">
+                            <FloatingLabel controlId="floatingTextarea2" label="" >
                                 <Form.Control
                                     as="textarea"
                                     placeholder="Ingrese la coordenada de latitud donde se encuentra el peaje"
+                                    style={{ width: '240px', height: '30px' }}
                                 />
                             </FloatingLabel>
                         </tr>
                         </tbody>
                     </Table>
 
-                    <h2 style={h2}>Precios por Categoría de Vehículo</h2>
-
                     <Table>
+                        <thead>
+                            <tr>
+                                <th colSpan={'3'}>
+                                    <h2 style={h2}>Precios por Categoría de Vehículo</h2>
+                                </th>
+                            </tr>
+                        </thead>
                         <tbody>
                         <tr>
                             <th scope="row">Categoría I: </th>
@@ -137,7 +141,7 @@ export default function Peajes() {
                                 <Form.Control 
                                 as="textarea" 
                                 placeholder=""
-                                style={{ width: '490px' }}
+                                style={{ width: '490px', height: '30px' }}
                                 />
                             </FloatingLabel>
                         </tr>
@@ -147,7 +151,7 @@ export default function Peajes() {
                                 <Form.Control 
                                 as="textarea" 
                                 placeholder=""
-                                style={{ width: '490px' }}
+                                style={{ width: '490px', height: '30px' }}
                                 />
                             </FloatingLabel>
                         </tr>
@@ -157,7 +161,7 @@ export default function Peajes() {
                                 <Form.Control 
                                 as="textarea" 
                                 placeholder=""
-                                style={{ width: '490px' }}
+                                style={{ width: '490px', height: '30px' }}
                                 />
                             </FloatingLabel>
                         </tr>
@@ -167,7 +171,7 @@ export default function Peajes() {
                                 <Form.Control 
                                 as="textarea" 
                                 placeholder=""
-                                style={{ width: '490px' }}
+                                style={{ width: '490px', height: '30px' }}
                                 />
                             </FloatingLabel>
                         </tr>
@@ -177,7 +181,7 @@ export default function Peajes() {
                                 <Form.Control 
                                 as="textarea" 
                                 placeholder=""
-                                style={{ width: '490px' }}
+                                style={{ width: '490px', height: '30px' }}
                                 />
                             </FloatingLabel>
                         </tr>

@@ -18,8 +18,9 @@ import PagosIn from './components/PagosIn';
 import PeajesIn from './components/PeajesIn';
 import UsuarioIn from './components/UsuarioIn';
 import ConsorciosIn from './components/ConsorciosIn';
-
-
+import PeajesAdm from './components/PeajesAdm';
+import UsuariosAdm from './components/UsuariosAdm';
+import ConsorciosAdm from './components/ConsorciosAdm';
 
 
 
@@ -47,6 +48,9 @@ function App() {
           <Route path="/peajesin"  element={ <PeajesIn/> } ></Route>
           <Route path="/usuarioin"  element={ <UsuarioIn/> } ></Route>
           <Route path="/consorciosin"  element={ <ConsorciosIn/> } ></Route>
+          <Route path="/peajesadm"  element={ <PeajesAdm/> } ></Route>
+          <Route path="/usuarioadm"  element={ <UsuariosAdm/> } ></Route>
+          <Route path="/consorciosadm"  element={ <ConsorciosAdm/> } ></Route>
         </Routes>
       
       
