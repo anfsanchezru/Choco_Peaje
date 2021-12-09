@@ -83,10 +83,10 @@ export const NavbarChoco = ({ logged, setLogged }) => {
             {!logged ? (
               <>
                 <Link style={linkStyle} to="/login">
-                  <styledLink>Login</styledLink>
+                  <styledLink>Ingresar</styledLink>
                 </Link>
                 <Link style={linkStyle} to="/Registro">
-                  Register
+                  Registro
                 </Link>
                 <Link style={linkStyle} to="/Comofunciona">
                   ¿Cómo funciona?
@@ -106,7 +106,7 @@ export const NavbarChoco = ({ logged, setLogged }) => {
                   </Link>
                 </Navbar.Text>
                 <Nav.Link onClick={logOut} style={linkStyle}>
-                  Logout
+                  Cerrar Sesión
                 </Nav.Link>
               </>
             )}
