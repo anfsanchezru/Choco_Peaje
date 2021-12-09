@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, ButtonGroup, Card, Table,FloatingLabel,Form } from 'react-bootstrap';
+import { Button, ButtonGroup, Card, Table,FloatingLabel,Form, InputGroup, FormControl,DropdownButton,Dropdown } from 'react-bootstrap';
 
 export default function Consorcios() {
 
@@ -26,31 +26,31 @@ export default function Consorcios() {
         background: '#F05B71',
         border: '1px solid #000000',
         'box-sizing': 'border-box',
-        'box-shadow': '0px 4px 4px rgba(0, 0, 0, 0.25)'
+        'box-shadow': '#F05B71'
     }
 
     const Seccion1 = {
         position: 'absolute',
         width: '761px',
-        height: '587px',
-        left: '59px',
-        top: '732px',
+        height: '487px',
+        left: '30px',
+        top: '500px',
     }
 
     const Seccion2 = {
         position: 'absolute',
         width: '390px',
-        height: '501px',
-        left: '956px',
-        top: '732px',
+        height: '487px',
+        left: '856px',
+        top: '500px',
     }
 
     const boton1={
         position: 'absolute',
         width: '246px',
         height: '59px',
-        left: '105px',
-        top: '1208px',
+        left: '80px',
+        top: '380px',
 
         background: '#D6A25E',
         'border-radius': '25px'
@@ -60,29 +60,49 @@ export default function Consorcios() {
         position: 'absolute',
         width: '246px',
         height: '59px',
-        left: '517px',
-        top: '1208px',
+        left: '417px',
+        top: '380px',
 
         background: '#F05B71',
         'border-radius': '25px'
     }
 
+    const boton3={
+        position: 'absolute',
+        width: '246px',
+        height: '59px',
+        left: '77px',
+        top: '380px',
+
+        background: '#2A98C7',
+        'border-radius': '25px'
+    }
+
+    const stt={
+        height:'100px'
+    }
+    const but ={
+        backgroundcolor:'#2E11E3'
+    }
+
 return (
         
     <div className="ConsorcioAdm">
-        <ButtonGroup>
-            <Button class="btn btn-secondary btn-lg" type="button" style={barraBusqueda}>
-                Escriba el consorcio que desea buscar...
-            </Button>
-            <Button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" style="backgroundcolor:#2E11E3">
-                <span class="visually-hidden">Toggle Dropdown</span>
-            </Button>
-            <ul class="dropdown-menu">
-                ...
-            </ul>
-        </ButtonGroup>
+        <InputGroup className="mb-3">
+                <FormControl 
+                aria-label="Text input with dropdown button"
+                placeholder="Consorcio que desea buscar" />
+                <DropdownButton
+                variant="outline-secondary"
+                title="Buscar"
+                id="input-group-dropdown-2"
+                align="end"
+                >
+                <Dropdown.Item href="#">...</Dropdown.Item>
+                </DropdownButton>
+            </InputGroup>
         
-        <Card style={ Seccion1 }>
+        <Card style={Seccion1}>
             <Card.Header style={titulosSeccion1}>Información del Consorcio</Card.Header>
             <Card.Body>
                 <Table>
@@ -99,22 +119,18 @@ return (
                             <Form.Control
                                 as="textarea"
                                 placeholder="Escriba una breve descripción del Consorcio"
-                                style={{ height: '100px' }}
+                                style={stt} 
                             />
                         </FloatingLabel>
                     </tr>
                     <tr>
                         <th scope="row">Peajes: </th>
-                        <ButtonGroup>
-                            <Button class="btn btn-secondary btn-lg" type="button">
-                            </Button>
-                            <Button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" style="backgroundcolor:#2E11E3">
-                                <span class="visually-hidden">Toggle Dropdown</span>
-                            </Button>
-                            <ul class="dropdown-menu">
-                                ...
-                            </ul>
-                        </ButtonGroup>
+                        <Form.Select size="lg">
+                            <option>Peaje 1</option>
+                            <option>Peaje 2</option>
+                            <option>Peaje 3</option>
+                            <option>Peaje 4</option>
+                        </Form.Select>
                     </tr>
                     </tbody>
                 </Table>
@@ -126,22 +142,18 @@ return (
         </Card>
 
         <Card style={ Seccion2 }>
-            <Card.Header>Peajes a cargo</Card.Header>
+            <Card.Header style={titulosSeccion2}>Peajes a cargo</Card.Header>
             <Card.Body>
             <Table>
                 <tbody>
                 <tr>
                     <th scope="row">Nombre: </th>
-                    <ButtonGroup>
-                        <Button class="btn btn-secondary btn-lg" type="button">
-                        </Button>
-                        <Button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" style="backgroundcolor:#2E11E3">
-                            <span class="visually-hidden">Toggle Dropdown</span>
-                        </Button>
-                        <ul class="dropdown-menu">
-                            ...
-                        </ul>
-                    </ButtonGroup>
+                    <Form.Select size="lg">
+                            <option>Peaje 1</option>
+                            <option>Peaje 2</option>
+                            <option>Peaje 3</option>
+                            <option>Peaje 4</option>
+                    </Form.Select>
                 </tr>
                 <tr>
                     <th scope="row">Ubicación: </th>
@@ -164,7 +176,7 @@ return (
                 </tr>
                 </tbody>
             </Table>
-            <Button variant="primary">Ir a información del peaje</Button>
+            <Button variant="primary" style={boton3}>Ir a información del peaje</Button>
             </Card.Body>
         </Card>
     </div>
