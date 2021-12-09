@@ -1,0 +1,12 @@
+.customLink {
+  font-size: "24px";
+  line-height: "28px";
+  letter-spacing: "-0.025em";
+  color: "#6D7E8F";
+  margin-left: "40px";
+  text-decoration: "none";
+}
+
+.customLink:hover {
+    color: red;
+}
