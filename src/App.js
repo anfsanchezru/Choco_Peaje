@@ -21,6 +21,7 @@ import ConsorciosIn from './components/ConsorciosIn';
 import PeajesAdm from './components/PeajesAdm';
 import UsuariosAdm from './components/UsuariosAdm';
 import ConsorciosAdm from './components/ConsorciosAdm';
+import Admin from './components/Admin';
 
 
 
@@ -51,6 +52,7 @@ function App() {
           <Route path="/peajesadm"  element={ <PeajesAdm/> } ></Route>
           <Route path="/usuarioadm"  element={ <UsuariosAdm/> } ></Route>
           <Route path="/consorciosadm"  element={ <ConsorciosAdm/> } ></Route>
+          <Route path="/administrador"  element={ <Admin/> } ></Route>
         </Routes>
       
       

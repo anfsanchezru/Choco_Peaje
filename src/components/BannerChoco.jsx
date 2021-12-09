@@ -1,7 +1,6 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'react-bootstrap';
-import PrettyCar from '../images/undrawCar.svg';
 
 export default function BannerChoco({setLogged}) {
     const imgStyle = {
@@ -46,7 +45,6 @@ export default function BannerChoco({setLogged}) {
 
     return (
         <div>
-           
             <Container style={bannerStyle} fluid className="">
                 <Container style={bannerStyle} className="container-sm">      
                 <h1 style={h1}>Peajes del Chocó</h1>
