@@ -25,18 +25,16 @@ export default function Registro() {
 
     const containerStyle = {
         flexGrow: "1",
-        height: "100%",
         display: "flex",
         flexDirection: "column",
         aligntItems: "center",
         justifyContent: "center",
         padding: "100px",
         maxWidth: "800px",
-        maxHeight: "650px"
+        maxHeight: "720px"
     }
 
     const formStyle = {
-        flexGrow: "1",
         borderRadius: "20px",
         padding: "50px",
         boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.25)",
@@ -50,12 +48,10 @@ export default function Registro() {
     const background = {
         backgroundImage: "linear-gradient(90deg, #2A98C7 0%, #ACCDE5 100%",
         flexGrow: "1",
-        height: "100%",
         display: "flex",
         flexDirection: "column",
         aligntItems: "center",
         justifyContent: "center",
-        padding: "100px"
     }
 
     const textStyles = {
@@ -73,7 +69,11 @@ export default function Registro() {
         },
         formBox: {
             borderRadius: "30px",
-        }
+            margin: "0px"
+        },
+        title: {
+            marginBottom: "20px"
+        } 
     }
 
     return (
@@ -82,14 +82,14 @@ export default function Registro() {
                 <Container fluid="md" style={containerStyle}>
                     <Form style={formStyle}>
 
-                        <div>
+                        <div style={textStyles.title}>
                             <h1 style={textStyles.h1}>REGISTRO</h1>
                             <p>¿Ya tienes cuenta? <Link to="/login" style={textStyles.link}>Ingresa aquí</Link></p>
                         </div>
 
                         <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <FloatingLabel controlId="floatingInput" label="Email" className="mb-3" >
-                                <Form.Control type="email" placeholder="name@example.com" style={textStyles.formBox}
+                            <FloatingLabel controlId="floatingInput" label="Email">
+                                <Form.Control type="email" placeholder="name@email.com" style={textStyles.formBox}
                                     onChange={(e) => {
                                         setEmail(e.target.value);
                                     }} />
