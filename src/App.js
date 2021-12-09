@@ -22,6 +22,7 @@ import PeajesAdm from './components/PeajesAdm';
 import UsuariosAdm from './components/UsuariosAdm';
 import ConsorciosAdm from './components/ConsorciosAdm';
 import Admin from './components/Admin';
+import Home from './components/Home';
 
 
 
@@ -38,7 +39,7 @@ function App() {
       <BannerChoco/>
       <Container1/>
         <Routes>
-          <Route path="/" element={ <BannerChoco logged={logged}  setLogged={setLogged}/> }></Route>
+          <Route path="/" element={ <Home logged={logged}  setLogged={setLogged}/> }></Route>
           <Route path="/login"  element={ <Login logged={logged}  setLogged={setLogged}/> } ></Route>
           <Route path="/registro"  element={ <Registro/> } ></Route>
           <Route path="/user"  element={ <User logged={logged}  setLogged={setLogged}/> } ></Route>
