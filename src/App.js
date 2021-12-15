@@ -1,7 +1,6 @@
 import './App.css';
 import React, { useState } from "react";
 import { NavbarChoco } from './components/NavbarChoco';
-import BannerChoco from './components/BannerChoco';
 import Registro from './components/Registro';
 import User from './components/User';
 import Comofunciona from './components/Comofunciona';
@@ -12,7 +11,6 @@ import {
 } from "react-router-dom";
 import Login from './components/Login';
 import Pagos from './components/Pagos';
-import { Container1 } from './components/styled/Container.styled';
 import Reportes from './components/Reportes';
 import PagosIn from './components/PagosIn';
 import PeajesIn from './components/PeajesIn';
@@ -35,9 +33,7 @@ function App() {
       <BrowserRouter>
       
       <NavbarChoco logged={logged} setLogged={setLogged}/>
-      
-      <BannerChoco/>
-      <Container1/>
+
         <Routes>
           <Route path="/" element={ <Home logged={logged}  setLogged={setLogged}/> }></Route>
           <Route path="/login"  element={ <Login logged={logged}  setLogged={setLogged}/> } ></Route>

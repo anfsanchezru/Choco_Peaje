@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import styled from "styled-components";
 
 const linkStyle = {
   fontSize: "24px",
@@ -12,12 +11,6 @@ const linkStyle = {
   marginLeft: "40px",
   textDecoration: "none",
 };
-
-const styledLink = styled(Link)` 
-  &:hover {
-    color: red;
-  }
-`;
 
 const textStyle = {
   fontSize: "20px",
@@ -83,10 +76,10 @@ export const NavbarChoco = ({ logged, setLogged }) => {
             {!logged ? (
               <>
                 <Link style={linkStyle} to="/login">
-                  <styledLink>Login</styledLink>
+                  Login
                 </Link>
                 <Link style={linkStyle} to="/Registro">
-                  Register
+                  Registro
                 </Link>
                 <Link style={linkStyle} to="/Comofunciona">
                   ¿Cómo funciona?

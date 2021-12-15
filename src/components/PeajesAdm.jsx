@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, InputGroup, Card, Table,FloatingLabel,Form,FormControl,DropdownButton,Dropdown } from 'react-bootstrap';
-import { PagosStyled, StyledCard } from "./styled/Pagos.styled";
+import { PagosStyled } from "./styled/Pagos.styled";
 
 export default function Peajes() {
     

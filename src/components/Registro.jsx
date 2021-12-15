@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Container, Form, Button, FloatingLabel } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Registro() {
 
-    let navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [documento, setDocumento] = useState("");
     const [name, setName] = useState("");
@@ -19,6 +18,13 @@ export default function Registro() {
             name: name,
             lastname: lastName,
             password: password
+        }
+
+        for (const key in registerData) {
+            if (registerData.key == null || registerData.key === "") {
+                alert(`Por favor llene todos los campos olvidó llenar ${key.toUpperCase()}`);
+                return;
+            }
         }
         console.log(registerData);
     }

@@ -1,19 +1,19 @@
 import React from 'react';
-import { Button, ButtonGroup, Card, Table,FloatingLabel,Form, InputGroup, FormControl,DropdownButton,Dropdown } from 'react-bootstrap';
+import { Button, Card, Table,FloatingLabel,Form, InputGroup, FormControl,DropdownButton,Dropdown } from 'react-bootstrap';
 
 export default function Consorcios() {
 
-    const barraBusqueda = {
-        position: 'absolute',
-        width: '869px',
-        height: '52px',
-        left: '219px',
-        top: '552px',
+    // const barraBusqueda = {
+    //     position: 'absolute',
+    //     width: '869px',
+    //     height: '52px',
+    //     left: '219px',
+    //     top: '552px',
 
-        background: '#FDFDFD',
-        border: '1px solid #000000',
-        'box-sizing': 'border-box'
-    }
+    //     background: '#FDFDFD',
+    //     border: '1px solid #000000',
+    //     'box-sizing': 'border-box'
+    // }
 
     const titulosSeccion1 = {
         background: '#2A98C7',
@@ -80,9 +80,6 @@ export default function Consorcios() {
 
     const stt={
         height:'100px'
-    }
-    const but ={
-        backgroundcolor:'#2E11E3'
     }
 
 return (

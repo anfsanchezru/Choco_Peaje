@@ -1,20 +1,9 @@
 import React from "react";
-import { Container, Button, ButtonGroup, Col } from 'react-bootstrap';
+import { Button, ButtonGroup, Col } from 'react-bootstrap';
 import { PagosStyled, StyledCard } from "./styled/Pagos.styled";
 
 export default function UsuarioIn() {
-    const cont = {
-        background:'F1FAFE'}
-    
-    const cont2 ={
-        background: '#F1FAFE',
-        position:'absolute',
-        width: '1440px',
-        height: '465px',
-        left: '0px',
-        top: '380px',
-        padding: '100px'}
-    
+        
     const p1={
         color: 'rgb(0, 0, 0)',
         height: '42px',

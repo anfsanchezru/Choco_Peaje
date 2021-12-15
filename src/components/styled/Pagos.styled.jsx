@@ -5,7 +5,7 @@ export const PagosStyled = styled.div`
     align-items: center;
     max-width: 100%;
     padding: 20px 20px;
-    margin:  auto auto;
+    margin:  auto auto;    
 `;
 
 export const StyledCard = styled.div`

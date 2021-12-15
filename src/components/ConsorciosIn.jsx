@@ -1,18 +1,8 @@
 import React from "react";
-import { Container, Button, label, input, textarea, Form, Col  } from 'react-bootstrap';
+import { Button, Col  } from 'react-bootstrap';
 import { PagosStyled, StyledCard } from "./styled/Pagos.styled";
 
 export default function Peajes() {
-    
-    const cont1 ={
-        'background-color': '#F1FAFE',
-        'padding-left': '100px',
-        'position':'absolute', 
-        width: '1440px',
-        height: '465px', 
-        left: '0px',
-        top: '380px'
-    }
 
     const p1 ={
         color: 'rgb(0, 0, 0)',
@@ -48,8 +38,6 @@ export default function Peajes() {
     const lab ={
         'font-family':'Roboto',
         'font-size': '30px',
-        'font-style': 'normal',
-        'font-size': '24px',
         'font-style': 'normal',
         'font-weight': '300',
         'line-height': '28px',

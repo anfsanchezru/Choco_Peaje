@@ -36,13 +36,6 @@ export default function Footer() {
     paddingBottom: "30px"
   };
 
-  const h1 = {
-    fontSize: "36px",
-    lineHeight: "42px",
-    letterSpacing: "-0.025em",
-    color: "#000000",
-  };
-
   const h2 = {
     fontSize: "20px",
     fontWeight: "300",
