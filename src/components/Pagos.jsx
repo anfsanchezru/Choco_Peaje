@@ -50,11 +50,11 @@ export default function Pagos() {
         "content-type": "application/json",
       },
       method: "POST",
-      body: JSON.stringify( formResponse )
+      body: JSON.stringify(formResponse),
     })
       .then((res) => res.json())
       .then((res) => alert(res.msg))
-      .catch(err => alert(err.msg));
+      .catch((err) => alert(err.msg));
 
     console.log(formResponse);
   }
@@ -66,7 +66,9 @@ export default function Pagos() {
           <div>
             <Col sm="10">
               <Form.Select ref={metodoPago}>
-                <option defaultValue value="">Seleccione el método de pago</option>
+                <option defaultValue value="">
+                  Seleccione el método de pago
+                </option>
                 <option value="1">Tarjeta de Crédito</option>
                 <option value="2">Tarjeta Debito</option>
                 <option value="3">PSE</option>
@@ -74,7 +76,9 @@ export default function Pagos() {
               <br />
 
               <Form.Select ref={entidadBancaria}>
-                <option defaultValue value="">Seleccione la entidad bancaria</option>
+                <option defaultValue value="">
+                  Seleccione la entidad bancaria
+                </option>
                 <option value="1">Bancolombia</option>
                 <option value="2">Davivienda</option>
                 <option value="3">Banco Genérico 3</option>
@@ -82,7 +86,9 @@ export default function Pagos() {
               <br />
 
               <Form.Select ref={tipoIdentificacion}>
-                <option defaultValue value="">Introduzca el tipo de identificación</option>
+                <option defaultValue value="">
+                  Introduzca el tipo de identificación
+                </option>
                 <option value="1">C.C.</option>
                 <option value="2">T.I.</option>
                 <option value="3">Pasaporte</option>

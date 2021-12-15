@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Container, Button, Form, Col, Row } from "react-bootstrap";
+import { Container, Button, Form, Col, Row, InputGroup } from "react-bootstrap";
 import config from "../config";
 import { PagosStyled, StyledCard } from "./styled/Pagos.styled";
 
@@ -25,16 +25,7 @@ export default function Peajes() {
     "background-color": "#F1FAFE",
     position: "absolute",
   };
-  const cont2 = {
-    position: "center",
-    width: "maximum",
-    top: "659px",
-    "text-aling": "center",
-    background:
-      "linear-gradient(0deg, rgba(240, 91, 113, 0.35), rgba(240, 91, 113, 0.35))",
-    paddingTop: "10px",
-    paddingBottom: "20px",
-  };
+
   const p1 = {
     color: "#0085BB",
   };
@@ -43,17 +34,6 @@ export default function Peajes() {
 
   const lab = {
     marginRight: "10px",
-  };
-
-  const lab1 = {
-    textAlign: "center",
-  };
-
-  const consulta = {
-    display: "flex",
-    flexDirection: "column",
-    width: "100%",
-    alignItems: "space-between",
   };
 
   const butt = {
@@ -73,26 +53,10 @@ export default function Peajes() {
     alignItems: "center",
   };
 
-  const columnCell2 = {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    textAlign: "right",
-  };
-
   const lineBreak = {
     color: "silver",
     backgroundColor: "silver",
     height: 3,
-  };
-
-  const input = {
-    width: "80%",
-    margin: "10px",
-  };
-
-  const row = {
-    marginBottom: "10px",
   };
 
   const placa = useRef();
@@ -155,12 +119,11 @@ export default function Peajes() {
   }
 
   function recargar() {
-
     const formResponse = {
-        usuario: usuarioRecarga.current.value,
-        recarga: valorRecarga.current.value,
-        metodoRecarga: metodoRecarga.current.value
-      };
+      usuario: usuarioRecarga.current.value,
+      recarga: valorRecarga.current.value,
+      metodoRecarga: metodoRecarga.current.value,
+    };
 
     // Verificar ruta host: http://localhost:8080/ -> accion recargar: http://localhost:8080/recargar
     fetch(`${host}recargar`, {
@@ -195,54 +158,73 @@ export default function Peajes() {
                 </p>
               </div>
               <br />
-              <Row>
-                <Col style={columnCell}>
-                  <label for="text" style={lab}>
-                    Placas del Vehículo *
-                  </label>
-                  <input type="text" ref={placa}></input>
-                  <br />
-                  <Button style={butt} onClick={consultar}>
-                    Consultar
-                  </Button>
-                </Col>
+              <InputGroup className="mb-3">
+                <Form.Label column sm={2}>
+                  Placa
+                </Form.Label>
+                <Form.Control
+                  placeholder="AAA000"
+                  aria-label="Placa"
+                  aria-describedby="basic-addon2"
+                  ref={placa}
+                />
+                <Button
+                  variant="outline-secondary"
+                  id="button-addon2"
+                  onClick={consultar}
+                >
+                  Consultar
+                </Button>
+              </InputGroup>
 
-                <Col style={columnCell}>
-                  <Container fluid className="" style={cont2}>
-                    <label for="text" style={lab1}>
-                      Verifique que los datos autogenerados continuación sean
-                      correctos:
-                    </label>
-                    <div style={consulta}>
-                      <label for="text" style={lab}>
-                        Usuario
-                      </label>
-                      <input type="text" ref={usuarioConsulta}></input>
-                    </div>
-
-                    <div style={consulta}>
-                      <label for="text" style={lab}>
-                        Categoría del Vehículo
-                      </label>
-                      <input type="text" ref={vehiculoConsulta}></input>
-                    </div>
-
-                    <div style={consulta}>
-                      <label for="text" style={lab}>
-                        Valor a pagar
-                      </label>
-                      <input type="text" ref={valorAPagar}></input>
-                    </div>
-                  </Container>
-                </Col>
-              </Row>
               <br />
+              <p>
+                Verifique que los datos autogenerados a continuación sean
+                correctos:
+              </p>
+
+              <InputGroup className="mb-3">
+                <Form.Control
+                  placeholder="Usuario"
+                  aria-label="Usuario"
+                  aria-describedby="basic-addon1"
+                  ref={usuarioConsulta}
+                  disabled
+                />
+                <InputGroup.Text id="basic-addon1">Usuario</InputGroup.Text>
+              </InputGroup>
+
+              <InputGroup className="mb-3">
+                <Form.Control
+                  placeholder="Categoría I"
+                  aria-label="Categoria del vehiculo"
+                  aria-describedby="basic-addon1"
+                  ref={vehiculoConsulta}
+                  disabled
+                />
+                <InputGroup.Text id="basic-addon1">
+                  Categoría del vehículo
+                </InputGroup.Text>
+              </InputGroup>
+
+              <InputGroup className="mb-3">
+                <Form.Control
+                  placeholder="Usuario"
+                  aria-label="Usuario"
+                  aria-describedby="basic-addon1"
+                  ref={valorAPagar}
+                  disabled
+                />
+                <InputGroup.Text id="basic-addon1">
+                  Valor a pagar
+                </InputGroup.Text>
+              </InputGroup>
               <br />
               <>
                 <label for="text" style={lab}>
                   Seleccione método de pago*
                 </label>
-                <Form.Select size="lg" ref={metodoDePago}>
+                <Form.Select size="md" ref={metodoDePago}>
                   <option value="1">Efectivo</option>
                   <option value="2">Tarjeta</option>
                 </Form.Select>
@@ -270,34 +252,30 @@ export default function Peajes() {
                 con * son obligatorios)
               </p>
               <br />
-              <Row style={row}>
-                <Col sm="3" style={columnCell2}>
-                  <label for="text" style={lab}>
-                    Usuario*
-                  </label>
-                </Col>
-
-                <Col>
-                  <input type="text" style={input} ref={usuarioRecarga}></input>
-                </Col>
-              </Row>
               <Row>
-                <Col sm="3" style={columnCell2}>
-                  <label for="text" style={lab}>
-                    Valor a recargar*
-                  </label>
-                </Col>
+                <Form.Label column lg={2}>
+                  Usuario*
+                </Form.Label>
                 <Col>
-                  <input type="text" style={input} ref={valorRecarga}></input>
+                  <Form.Control type="text" placeholder="Usuario" ref={usuarioRecarga}/>
                 </Col>
-                <br />
               </Row>
-
               <br />
+
+              <Row>
+                <Form.Label column lg={2}>
+                  Valor a recargar*
+                </Form.Label>
+                <Col>
+                  <Form.Control type="number" placeholder="$ COP" ref={valorRecarga}/>
+                </Col>
+              </Row>
+              <br /> 
+
               <label for="text" style={lab}>
                 Seleccione método de pago*
               </label>
-              <Form.Select size="lg" ref={metodoRecarga}>
+              <Form.Select size="md" ref={metodoRecarga}>
                 <option value="1">Efectivo</option>
                 <option value="2">Tarjeta</option>
               </Form.Select>

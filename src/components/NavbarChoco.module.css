@@ -1,12 +1,94 @@
 .customLink {
-  font-size: "24px";
-  line-height: "28px";
-  letter-spacing: "-0.025em";
-  color: "#6D7E8F";
-  margin-left: "40px";
-  text-decoration: "none";
+  position: relative;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -0.025em;
+  color: #6d7e8f;
+  margin-left: 40px;
+  text-decoration: none;
 }
 
 .customLink:hover {
-    color: red;
+  color: #0085bb;
+  transition: all 0.3s ease;
+}
+
+.customLink::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 3px;
+  bottom: -7px;
+  left: 0;
+  background-color: #0085bb;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.customLink:hover::before {
+  transform: scaleX(1);
+}
+
+.userLink {
+  position: relative;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: -0.025em;
+  color: #2b0d4e;
+  margin-left: 5px;
+  text-decoration: none;
+}
+
+.userLink:hover {
+  color: #0085bb;
+  transition: all 0.3s ease;
+}
+
+.userLink::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 3px;
+  bottom: -7px;
+  left: 0;
+  background-color: #0085bb;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.userLink:hover::before {
+  transform: scaleX(1);
+}
+
+.offCanvasLink {
+  position: relative;
+  font-size: 24px;
+  line-height: 50px;
+  letter-spacing: -0.025em;
+  color: black;
+  text-decoration: none;
+}
+
+.offCanvasLink:hover {
+  color: #0085bb;
+  transition: all 0.3s ease;
+}
+
+.offCanvasLink::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 3px;
+  bottom: -7px;
+  left: 0;
+  background-color: #0085bb;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.offCanvasLink:hover::before {
+  transform: scaleX(1);
 }

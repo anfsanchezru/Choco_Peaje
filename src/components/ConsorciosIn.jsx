@@ -1,100 +1,106 @@
-import React from "react";
-import { Button, Col  } from 'react-bootstrap';
+import React, { useRef }from "react";
+import { Button, Row, Form } from "react-bootstrap";
+import config from "../config";
 import { PagosStyled, StyledCard } from "./styled/Pagos.styled";
 
 export default function Peajes() {
+  const p1 = {
+    color: "#0085BB",
+  };
 
-    const p1 ={
-        color: 'rgb(0, 0, 0)',
-        height: '50px', 
-        'align-items':'center',
-        left: '630px',
-        top: '451px',
-        'border-radius': 'nullpx',
-        'font-family': 'Roboto',
-       'font-size':' 36px',
-       'font-style': 'normal',
-       'font-weight': '700',
-       'line-height': '42px',
-       'letter-spacing': '-0.025em',
-       'text-align': 'center',
+  const background = {
+    backgroundImage: "linear-gradient(90deg, #2A98C7 0%, #ACCDE5 100%",
+    flexGrow: "1",
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
+    aligntItems: "center",
+    justifyContent: "center",
+  };
 
-    }
-    const p2 ={
-        color: '#000',
-        height: '28px',
-        left: '100px',
-        top: '699px',
-        'border-radius':' nullpx',
-        'font-family': 'Roboto',
-        'font-size': '24px', 
-        'font-style': 'normal', 
-        'font-weight': '300',
-        'line-height': '28px', 
-        'letter-spacing': '-0.025em',
-        'text-align': 'center'
+  const textStyles = {
+    textAlign: "left",
+  };
+
+  const textArea = {
+    resize: "none",
+    height: "100px",
+  };
+
+  const butt = {
+    background: "#2A98C7",
+    height: "90x",
+    width: "200px",
+    borderRadius: "20px",
+    alignSelf: "center",
+    justifySelf: "center",
+    fontSize: "18px",
+  };
+
+  const nombre = useRef();
+  const descripcion = useRef();
+  const host = config.api.host;
+  
+  function crearConsorcio() {
+    const nuevoConsorcio = {
+        nombre: nombre.current.value,
+        descripcion: descripcion.current.value
     }
 
-    const lab ={
-        'font-family':'Roboto',
-        'font-size': '30px',
-        'font-style': 'normal',
-        'font-weight': '300',
-        'line-height': '28px',
-        'letter-spacing': '-0.025em',
-        'text-align':'left'
-    }
-    const butt ={
-            
-        background: '#2A98C7',
-        height: '90x',
-        width: '180px', 
-        left: '936px',
-        top: '995px',
-        'border-radius': '25px',
-    
-        'font-family': 'Roboto',
-        'font-size': '27px',
-        'font-style': 'normal',
-        'font-weight': '700',
-        'line-height': '42px',
-        'letter-spacing': '-0.025em',
-        'text-align':'center'
-    }
-    
+    fetch(`${host}crearConsorcio`, {
+        headers: {
+          "content-type": "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify(nuevoConsorcio),
+      })
+        .then((res) => res.json())
+        .then((res) => alert(res.msg))
+        .catch((err) => alert(err.msg));
+  
+      console.log(nuevoConsorcio)
+  }
 
-    return (
-        <PagosStyled>
+
+  return (
+    <div style={background}>
+      <PagosStyled>
         <StyledCard>
-        <div>
-            <Col sm="10">
-
-            <p style={p1}> Crear consorcio</p>
-            <p style={p2}> Ingrese todos los datos correspondientes: (Los campos indicados con * son obligatorios)</p>
+          <div style={textStyles}>
+            <Row>
+              <h1 style={p1}>Crear consorcio</h1>
+              <p>
+                {" "}
+                Ingrese todos los datos correspondientes: (Los campos indicados
+                con * son obligatorios)
+              </p>
+            </Row>
             <br />
-            <label for="text" style={lab}>Nombre del Consorcio*</label>
-            <input type="text"></input> 
-             <br />
-             <br />
-            <label for="text" style={lab}>Descripción*</label> 
-            <textarea name="descripcion" id="descripcion" cols="30" rows="10"></textarea>
-            <br />
+            <Form>
+              <Form.Group className="mb-3" controlId="nombreConsorcio">
+                <Form.Label>Nombre del Consorcio*</Form.Label>
+                <Form.Control type="name" placeholder="Consorcio del Chocó" ref={nombre}/>
+              </Form.Group>
+              <br />
+              <Form.Group className="mb-3" controlId="descripcionConsorcio">
+                <Form.Label>Descripción del Consorcio*</Form.Label>
+                <Form.Control
+                  as="textarea"
+                  rows={3}
+                  placeholder="Ingrese una descripción (max: 250 caracteres)"
+                  style={textArea}
+                  maxLength="250"
+                  ref={descripcion}
+                />
+              </Form.Group>
+            </Form>
             <br />
             <div>
-            <Button style={butt}>Crear Consorcio</Button>
+              <Button style={butt} onClick={crearConsorcio}>Crear Consorcio</Button>
             </div>
-        </Col>
-        </div>
-        
-        </StyledCard>       
-        </PagosStyled> 
-        )
-    } 
-      
-        
-        
-        
-        
-           
-
-
+          </div>
+        </StyledCard>
+      </PagosStyled>
+    </div>
+  );
+}

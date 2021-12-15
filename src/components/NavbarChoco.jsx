@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Navbar, Container, Nav, Button, Offcanvas } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
+import styles from "./NavbarChoco.module.css";
 
 const linkStyle = {
   fontSize: "24px",
@@ -12,25 +13,24 @@ const linkStyle = {
   textDecoration: "none",
 };
 
-const textStyle = {
+const buttonStyle = {
+  marginLeft: "40px",
   fontSize: "20px",
-  color: "#6D7E8F",
+  color: "white",
+  background: "#2A98C7",
+  paddingLeft:"30px",
+  paddingRight: "30px",
+  borderRadius: "25px",
 };
-
-const linkStyle2 = {
-    fontSize: "24px",
-    color: "#6D7E8F",
-    textDecoration: "none"
-}
 
 const logoStyle = {
   cursor: "pointer",
 };
 
 const divHeight = {
-  height: "78px",  
-  borderBottom: "2px solid silver"
-}
+  height: "78px",
+  borderBottom: "2px solid silver",
+};
 
 export const NavbarChoco = ({ logged, setLogged }) => {
   let navigate = useNavigate();
@@ -40,11 +40,16 @@ export const NavbarChoco = ({ logged, setLogged }) => {
 
   const logOut = () => {
     localStorage.setItem("logged", false);
+    handleClose();
     navigate("/login");
     setLogged(false);
   };
 
   const [user, setuser] = useState("");
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   useEffect(() => {
     const getUser = localStorage.getItem("user");
@@ -58,6 +63,7 @@ export const NavbarChoco = ({ logged, setLogged }) => {
     } else {
       setLogged(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -75,32 +81,64 @@ export const NavbarChoco = ({ logged, setLogged }) => {
           <Nav className="me">
             {!logged ? (
               <>
-                <Link style={linkStyle} to="/login">
+                <Link className={styles.customLink} to="/login">
                   Login
                 </Link>
-                <Link style={linkStyle} to="/Registro">
+                <Link className={styles.customLink} to="/Registro">
                   Registro
                 </Link>
-                <Link style={linkStyle} to="/Comofunciona">
+                <Link className={styles.customLink} to="/Comofunciona">
                   ¿Cómo funciona?
                 </Link>
               </>
             ) : (
+              // Usuario Interno
               <>
-                <Navbar.Text style={linkStyle}>
-                  Usuario:{" "}
-                  <Link style={textStyle} to="/user">
+                <Navbar.Text style={linkStyle}>Usuario: </Navbar.Text>
+                <Nav.Link>
+                  <Link className={styles.userLink} to="/usuarioin">
                     {user}
                   </Link>
-                </Navbar.Text>
-                <Navbar.Text style={linkStyle}>
-                  <Link style={linkStyle2} to="/Comofunciona">
+                </Nav.Link>
+                <Nav.Link>
+                  <Link className={styles.customLink} to="/Comofunciona">
                     ¿Cómo funciona?
                   </Link>
-                </Navbar.Text>
-                <Nav.Link onClick={logOut} style={linkStyle}>
-                  Logout
                 </Nav.Link>
+
+                <Button
+                  variant="primary"
+                  onClick={handleShow}
+                  style={buttonStyle}
+                >
+                  Menu
+                </Button>
+
+                <Offcanvas show={show} onHide={handleClose} placement="end">
+                  <Offcanvas.Header closeButton>
+                    <Offcanvas.Title>Bienvenido {user}</Offcanvas.Title>
+                  </Offcanvas.Header>
+                  <Offcanvas.Body>
+                    <p>
+                      Bienvenido a peajes del Chocó, escoge cualquier opción del menú
+                    </p>
+                    <Link className={styles.offCanvasLink} onClick={handleClose} to="/peajesin">
+                      Crea un peaje
+                    </Link>
+                    <br />
+                    <Link className={styles.offCanvasLink} onClick={handleClose} to="/consorciosin">
+                      Crea un consorcio
+                    </Link>
+                    <br />
+                    <Link className={styles.offCanvasLink} onClick={handleClose} to="/pagosin">
+                      Pagos y recargas
+                    </Link>
+                    <br />
+                    <Link className={styles.offCanvasLink} onClick={logOut} to="/Login">
+                      Logout
+                    </Link>
+                  </Offcanvas.Body>
+                </Offcanvas>
               </>
             )}
           </Nav>
