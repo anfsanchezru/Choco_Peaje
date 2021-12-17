@@ -7,10 +7,6 @@ export default function Peajes() {
   const p1 = {
     color: "#0085BB",
   };
-  const p2 = {
-    color: "#0085BB",
-    marginBottom: "30px",
-  };
 
   const butt = {
     background: "#2A98C7",
@@ -152,7 +148,6 @@ export default function Peajes() {
               <br />
 
               <div>
-                <h2 style={p2}>Valor del peaje según tipo de vehiculo*</h2>
 
                 <Row>
                   <Col sm="9" style={isFlex}>
@@ -262,6 +257,7 @@ export default function Peajes() {
                     type="number"
                     ref={longitud}
                   />
+                  <br />
                   <InputGroup.Text>Latitud, Longitud</InputGroup.Text>
                 </InputGroup>
               </div>

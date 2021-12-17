@@ -18,7 +18,7 @@ const buttonStyle = {
   fontSize: "20px",
   color: "white",
   background: "#2A98C7",
-  paddingLeft:"30px",
+  paddingLeft: "30px",
   paddingRight: "30px",
   borderRadius: "25px",
 };
@@ -46,6 +46,7 @@ export const NavbarChoco = ({ logged, setLogged }) => {
   };
 
   const [user, setuser] = useState("");
+  const [userType, setUserType] = useState("");
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -53,18 +54,20 @@ export const NavbarChoco = ({ logged, setLogged }) => {
 
   useEffect(() => {
     const getUser = localStorage.getItem("user");
+    const getUserType = localStorage.getItem("userType");
     setuser(getUser);
-    console.log(getUser);
+    setUserType(getUserType);
+    console.log(getUser, getUserType);
 
     let userState = localStorage.getItem("logged");
-
+    
     if (userState === "true") {
       setLogged(true);
     } else {
       setLogged(false);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [localStorage.getItem("user")]);
 
   return (
     <div>
@@ -91,7 +94,7 @@ export const NavbarChoco = ({ logged, setLogged }) => {
                   ¿Cómo funciona?
                 </Link>
               </>
-            ) : (
+            ) : userType === '1' ? (
               // Usuario Interno
               <>
                 <Navbar.Text style={linkStyle}>Usuario: </Navbar.Text>
@@ -120,21 +123,104 @@ export const NavbarChoco = ({ logged, setLogged }) => {
                   </Offcanvas.Header>
                   <Offcanvas.Body>
                     <p>
-                      Bienvenido a peajes del Chocó, escoge cualquier opción del menú
+                      Bienvenido a peajes del Chocó, escoge cualquier opción del
+                      menú
                     </p>
-                    <Link className={styles.offCanvasLink} onClick={handleClose} to="/peajesin">
+                    <Link
+                      className={styles.offCanvasLink}
+                      onClick={handleClose}
+                      to="/peajesin"
+                    >
                       Crea un peaje
                     </Link>
                     <br />
-                    <Link className={styles.offCanvasLink} onClick={handleClose} to="/consorciosin">
+                    <Link
+                      className={styles.offCanvasLink}
+                      onClick={handleClose}
+                      to="/consorciosin"
+                    >
                       Crea un consorcio
                     </Link>
                     <br />
-                    <Link className={styles.offCanvasLink} onClick={handleClose} to="/pagosin">
+                    <Link
+                      className={styles.offCanvasLink}
+                      onClick={handleClose}
+                      to="/pagosin"
+                    >
                       Pagos y recargas
                     </Link>
                     <br />
-                    <Link className={styles.offCanvasLink} onClick={logOut} to="/Login">
+                    <Link
+                      className={styles.offCanvasLink}
+                      onClick={logOut}
+                      to="/Login"
+                    >
+                      Logout
+                    </Link>
+                  </Offcanvas.Body>
+                </Offcanvas>
+              </>
+            ) : (
+              // Usuario Administrador
+              <>
+                <Navbar.Text style={linkStyle}>Usuario: </Navbar.Text>
+                <Nav.Link>
+                  <Link className={styles.userLink} to="/administrador">
+                    {user}
+                  </Link>
+                </Nav.Link>
+                <Nav.Link>
+                  <Link className={styles.customLink} to="/Comofunciona">
+                    ¿Cómo funciona?
+                  </Link>
+                </Nav.Link>
+
+                <Button
+                  variant="primary"
+                  onClick={handleShow}
+                  style={buttonStyle}
+                >
+                  Menu
+                </Button>
+
+                <Offcanvas show={show} onHide={handleClose} placement="end">
+                  <Offcanvas.Header closeButton>
+                    <Offcanvas.Title>Bienvenido {user}</Offcanvas.Title>
+                  </Offcanvas.Header>
+                  <Offcanvas.Body>
+                    <p>
+                      Bienvenido a peajes del Chocó, escoge cualquier opción del
+                      menú
+                    </p>
+                    <Link
+                      className={styles.offCanvasLink}
+                      onClick={handleClose}
+                      to="/peajesadm"
+                    >
+                      Peajes
+                    </Link>
+                    <br />
+                    <Link
+                      className={styles.offCanvasLink}
+                      onClick={handleClose}
+                      to="/consorciosadm"
+                    >
+                      Consorcios
+                    </Link>
+                    <br />
+                    <Link
+                      className={styles.offCanvasLink}
+                      onClick={handleClose}
+                      to="/usuarioadm"
+                    >
+                      Usuarios
+                    </Link>
+                    <br />
+                    <Link
+                      className={styles.offCanvasLink}
+                      onClick={logOut}
+                      to="/Login"
+                    >
                       Logout
                     </Link>
                   </Offcanvas.Body>

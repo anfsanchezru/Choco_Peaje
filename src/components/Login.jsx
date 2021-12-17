@@ -9,7 +9,7 @@ export default function Login({ setLogged }) {
 
   const login = (e) => {
     e.preventDefault();
-    if (email !== "javier@javier.com") {
+    if (email !== "javier@javier.com" && email !== "admin@choco.com") {
       alert("usuario invalido");
       return;
     }
@@ -17,11 +17,18 @@ export default function Login({ setLogged }) {
       alert("password invalido");
       return;
     }
-    setLogged(true);
+    if (email === "admin@choco.com") {
+      localStorage.setItem("userType", "0")
+    }
+    if (email === "javier@javier.com") {
+      localStorage.setItem("userType", "1")
+    }
+
     localStorage.setItem("logged", true);
     localStorage.setItem("user", email);
+    setLogged(true);
 
-    navigate("/");
+    navigate("/")
   };
 
   useEffect(() => {
