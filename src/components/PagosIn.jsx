@@ -37,13 +37,13 @@ export default function Peajes() {
   };
 
   const butt = {
-    background: "#2A98C7",
-    height: "90x",
-    width: "180px",
-    left: "936px",
-    top: "995px",
-    "border-radius": "25px",
-    textAlign: "center",
+    background: "#0085BB",
+    borderColor: "#0085BB",
+    width: "200px",
+    borderRadius: "20px",
+    alignSelf: "center",
+    justifySelf: "center",
+    fontSize: "18px",
   };
 
   const columnCell = {
@@ -209,8 +209,8 @@ export default function Peajes() {
 
               <InputGroup className="mb-3">
                 <Form.Control
-                  placeholder="Usuario"
-                  aria-label="Usuario"
+                  placeholder="Valor en COP"
+                  aria-label="Valor"
                   aria-describedby="basic-addon1"
                   ref={valorAPagar}
                   disabled
@@ -233,7 +233,7 @@ export default function Peajes() {
                 <br />
                 <div style={columnCell}>
                   <Button style={butt} onClick={pagar}>
-                    Pagar
+                    PAGAR
                   </Button>
                 </div>
               </div>
@@ -257,7 +257,11 @@ export default function Peajes() {
                   Usuario*
                 </Form.Label>
                 <Col>
-                  <Form.Control type="text" placeholder="Usuario" ref={usuarioRecarga}/>
+                  <Form.Control
+                    type="text"
+                    placeholder="Usuario"
+                    ref={usuarioRecarga}
+                  />
                 </Col>
               </Row>
               <br />
@@ -267,10 +271,14 @@ export default function Peajes() {
                   Valor a recargar*
                 </Form.Label>
                 <Col>
-                  <Form.Control type="number" placeholder="$ COP" ref={valorRecarga}/>
+                  <Form.Control
+                    type="number"
+                    placeholder="$ COP"
+                    ref={valorRecarga}
+                  />
                 </Col>
               </Row>
-              <br /> 
+              <br />
 
               <label for="text" style={lab}>
                 Seleccione método de pago*
@@ -282,7 +290,7 @@ export default function Peajes() {
               <br />
               <div style={columnCell}>
                 <Button style={butt} onClick={recargar}>
-                  Recargar
+                  RECARGAR
                 </Button>
               </div>
             </Col>

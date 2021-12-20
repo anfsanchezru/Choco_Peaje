@@ -9,7 +9,8 @@ export default function Peajes() {
   };
 
   const butt = {
-    background: "#2A98C7",
+    background: "#0085BB",
+    borderColor: "#0085BB",
     height: "90x",
     width: "300px",
     borderRadius: "25px",
@@ -92,7 +93,7 @@ export default function Peajes() {
       .then((res) => alert(res.msg))
       .catch((err) => alert(err.msg));
 
-    console.log(nuevoPeaje)
+    console.log(nuevoPeaje);
   }
 
   return (
@@ -118,7 +119,11 @@ export default function Peajes() {
                     Peaje
                   </Form.Label>
                   <Col sm={10}>
-                    <Form.Control type="name" placeholder="Nombre del peaje" ref={peaje}/>
+                    <Form.Control
+                      type="name"
+                      placeholder="Nombre del peaje"
+                      ref={peaje}
+                    />
                   </Col>
                 </Form.Group>
                 <>
@@ -148,7 +153,6 @@ export default function Peajes() {
               <br />
 
               <div>
-
                 <Row>
                   <Col sm="9" style={isFlex}>
                     <h3 style={h3}>Categoría del vehículo</h3>
@@ -169,7 +173,11 @@ export default function Peajes() {
                   </Form.Label>
                   <Col sm={3}>
                     <InputGroup>
-                      <Form.Control type="number" placeholder="COP" ref={valor1}/>
+                      <Form.Control
+                        type="number"
+                        placeholder="COP"
+                        ref={valor1}
+                      />
                       <InputGroup.Text>$</InputGroup.Text>
                     </InputGroup>
                   </Col>
@@ -186,7 +194,11 @@ export default function Peajes() {
                   </Form.Label>
                   <Col sm={3} style={inputCenter}>
                     <InputGroup>
-                      <Form.Control type="number" placeholder="COP" ref={valor2}/>
+                      <Form.Control
+                        type="number"
+                        placeholder="COP"
+                        ref={valor2}
+                      />
                       <InputGroup.Text>$</InputGroup.Text>
                     </InputGroup>
                   </Col>
@@ -203,7 +215,11 @@ export default function Peajes() {
                   </Form.Label>
                   <Col sm={3} style={inputCenter}>
                     <InputGroup>
-                      <Form.Control type="number" placeholder="COP" ref={valor3}/>
+                      <Form.Control
+                        type="number"
+                        placeholder="COP"
+                        ref={valor3}
+                      />
                       <InputGroup.Text>$</InputGroup.Text>
                     </InputGroup>
                   </Col>
@@ -219,7 +235,11 @@ export default function Peajes() {
                   </Form.Label>
                   <Col sm={3} style={inputCenter}>
                     <InputGroup>
-                      <Form.Control type="number" placeholder="COP" ref={valor4}/>
+                      <Form.Control
+                        type="number"
+                        placeholder="COP"
+                        ref={valor4}
+                      />
                       <InputGroup.Text>$</InputGroup.Text>
                     </InputGroup>
                   </Col>
@@ -235,7 +255,11 @@ export default function Peajes() {
                   </Form.Label>
                   <Col sm={3} style={inputCenter}>
                     <InputGroup>
-                      <Form.Control type="number" placeholder="COP" ref={valor5}/>
+                      <Form.Control
+                        type="number"
+                        placeholder="COP"
+                        ref={valor5}
+                      />
                       <InputGroup.Text>$</InputGroup.Text>
                     </InputGroup>
                   </Col>

@@ -1,4 +1,4 @@
-import React, { useRef }from "react";
+import React, { useRef } from "react";
 import { Button, Row, Form } from "react-bootstrap";
 import config from "../config";
 import { PagosStyled, StyledCard } from "./styled/Pagos.styled";
@@ -28,9 +28,9 @@ export default function Peajes() {
   };
 
   const butt = {
-    background: "#2A98C7",
-    height: "90x",
-    width: "200px",
+    background: "#0085BB",
+    borderColor: "#0085BB",
+    width: "270px",
     borderRadius: "20px",
     alignSelf: "center",
     justifySelf: "center",
@@ -40,27 +40,26 @@ export default function Peajes() {
   const nombre = useRef();
   const descripcion = useRef();
   const host = config.api.host;
-  
+
   function crearConsorcio() {
     const nuevoConsorcio = {
-        nombre: nombre.current.value,
-        descripcion: descripcion.current.value
-    }
+      nombre: nombre.current.value,
+      descripcion: descripcion.current.value,
+    };
 
     fetch(`${host}crearConsorcio`, {
-        headers: {
-          "content-type": "application/json",
-        },
-        method: "POST",
-        body: JSON.stringify(nuevoConsorcio),
-      })
-        .then((res) => res.json())
-        .then((res) => alert(res.msg))
-        .catch((err) => alert(err.msg));
-  
-      console.log(nuevoConsorcio)
-  }
+      headers: {
+        "content-type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify(nuevoConsorcio),
+    })
+      .then((res) => res.json())
+      .then((res) => alert(res.msg))
+      .catch((err) => alert(err.msg));
 
+    console.log(nuevoConsorcio);
+  }
 
   return (
     <div style={background}>
@@ -79,7 +78,11 @@ export default function Peajes() {
             <Form>
               <Form.Group className="mb-3" controlId="nombreConsorcio">
                 <Form.Label>Nombre del Consorcio*</Form.Label>
-                <Form.Control type="name" placeholder="Consorcio del Chocó" ref={nombre}/>
+                <Form.Control
+                  type="name"
+                  placeholder="Consorcio del Chocó"
+                  ref={nombre}
+                />
               </Form.Group>
               <br />
               <Form.Group className="mb-3" controlId="descripcionConsorcio">
@@ -96,7 +99,9 @@ export default function Peajes() {
             </Form>
             <br />
             <div>
-              <Button style={butt} onClick={crearConsorcio}>Crear Consorcio</Button>
+              <Button style={butt} onClick={crearConsorcio}>
+                CREAR CONSORCIO
+              </Button>
             </div>
           </div>
         </StyledCard>

@@ -17,7 +17,8 @@ const buttonStyle = {
   marginLeft: "40px",
   fontSize: "20px",
   color: "white",
-  background: "#2A98C7",
+  background: "#0085BB",
+  borderColor: "#0085BB",
   paddingLeft: "30px",
   paddingRight: "30px",
   borderRadius: "25px",
@@ -60,7 +61,7 @@ export const NavbarChoco = ({ logged, setLogged }) => {
     console.log(getUser, getUserType);
 
     let userState = localStorage.getItem("logged");
-    
+
     if (userState === "true") {
       setLogged(true);
     } else {
@@ -94,7 +95,7 @@ export const NavbarChoco = ({ logged, setLogged }) => {
                   ¿Cómo funciona?
                 </Link>
               </>
-            ) : userType === '1' ? (
+            ) : userType === "1" ? (
               // Usuario Interno
               <>
                 <Navbar.Text style={linkStyle}>Usuario: </Navbar.Text>

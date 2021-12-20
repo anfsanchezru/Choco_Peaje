@@ -18,17 +18,17 @@ export default function Login({ setLogged }) {
       return;
     }
     if (email === "admin@choco.com") {
-      localStorage.setItem("userType", "0")
+      localStorage.setItem("userType", "0");
     }
     if (email === "javier@javier.com") {
-      localStorage.setItem("userType", "1")
+      localStorage.setItem("userType", "1");
     }
 
     localStorage.setItem("logged", true);
     localStorage.setItem("user", email);
     setLogged(true);
 
-    navigate("/")
+    navigate("/");
   };
 
   useEffect(() => {
@@ -46,10 +46,10 @@ export default function Login({ setLogged }) {
     flexDirection: "column",
     aligntItems: "center",
     justifyContent: "center",
-    padding: "100px",    
+    padding: "100px",
     maxWidth: "800px",
-    maxHeight: "650px"
-  }
+    maxHeight: "650px",
+  };
 
   const formStyle = {
     flexGrow: "1",
@@ -60,8 +60,8 @@ export default function Login({ setLogged }) {
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
-    textAlign: "left"
-  }
+    textAlign: "left",
+  };
 
   const background = {
     backgroundImage: "linear-gradient(90deg, #2A98C7 0%, #ACCDE5 100%",
@@ -71,25 +71,26 @@ export default function Login({ setLogged }) {
     flexDirection: "column",
     aligntItems: "center",
     justifyContent: "center",
-  }
+  };
 
   const textStyles = {
     h1: {
-      color: "#0085BB"
+      color: "#0085BB",
     },
     link: {
-      textDecoration: "none"
+      textDecoration: "none",
     },
     button: {
       marginTop: "20px",
       borderRadius: "30px",
       height: "45px",
-      background: "#0085BB"
+      background: "#0085BB",
+      borderColor: "#0085BB",
     },
     formBox: {
-      borderRadius: "20px"
-    }
-  }
+      borderRadius: "20px",
+    },
+  };
 
   return (
     <>
@@ -98,11 +99,17 @@ export default function Login({ setLogged }) {
           <Form style={formStyle}>
             <div>
               <h1 style={textStyles.h1}>LOGIN</h1>
-              <p>¿No tienes cuenta? <Link to="/registro" style={textStyles.link}>Registrate aquí</Link></p>
+              <p>
+                ¿No tienes cuenta?{" "}
+                <Link to="/registro" style={textStyles.link}>
+                  Registrate aquí
+                </Link>
+              </p>
             </div>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email</Form.Label>
-              <Form.Control style={textStyles.formBox}
+              <Form.Control
+                style={textStyles.formBox}
                 type="email"
                 placeholder="Enter email"
                 value={email}
@@ -114,7 +121,8 @@ export default function Login({ setLogged }) {
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Contraseña</Form.Label>
-              <Form.Control style={textStyles.formBox}
+              <Form.Control
+                style={textStyles.formBox}
                 type="password"
                 placeholder="Password"
                 value={password}
@@ -123,7 +131,12 @@ export default function Login({ setLogged }) {
                 }}
               />
             </Form.Group>
-            <Button variant="primary" type="submit" onClick={login} style={textStyles.button}>
+            <Button
+              variant="primary"
+              type="submit"
+              onClick={login}
+              style={textStyles.button}
+            >
               INGRESA
             </Button>
           </Form>
