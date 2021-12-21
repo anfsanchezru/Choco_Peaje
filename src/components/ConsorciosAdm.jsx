@@ -199,7 +199,7 @@ export default function Consorcios() {
                     <Form.Control
                       type="name"
                       placeholder="Nombre del consorcio"
-                      disabled="true"
+                      disabled={true}
                       ref={consorcio}
                     />
                   </Col>
@@ -214,7 +214,7 @@ export default function Consorcios() {
                     placeholder="Ingrese una descripción (max: 250 caracteres)"
                     style={textArea}
                     maxLength="250"
-                    disabled="true"
+                    disabled={true}
                     ref={descripcion}
                   />
                 </InputGroup>
