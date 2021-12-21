@@ -4,31 +4,29 @@ import {
   Button,
   Card,
   Table,
-  FloatingLabel,
   Form,
   FormControl,
-  DropdownButton,
-  Dropdown,
-  Col
+  Col,
+  Row,
 } from "react-bootstrap";
 import { PagosStyled, StyledCard } from "./styled/Pagos.styled";
 
 export default function Usuarios() {
   const h1 = { color: "#0085BB" };
 
-  const titulosSeccion2 = {};
-
-  const titulosSeccion3 = {};
-
-  const Seccion1 = {};
-
-  const Seccion2 = {};
-
-  const Seccion3 = {};
+  const textRight = {
+    alignSelf: "flex-end",
+  };
 
   const h2 = {
     fontSize: "20px",
-    textAlign: "center"
+    textAlign: "center",
+  };
+
+  const h3 = {
+    color: "black",
+    fontSize: "20px",
+    alignSelf: "center",
   };
 
   const background = {
@@ -41,16 +39,64 @@ export default function Usuarios() {
     justifyContent: "center",
   };
 
+  const isFlex = {
+    display: "flex",
+  };
+
+  const isFlex2 = {
+    display: "flex",
+    justifyContent: "flex-end",
+  };
+
+  const boton1 = {
+    height: "90x",
+    width: "40%",
+    maxWidth: "300px",
+    borderRadius: "25px",
+    alignSelf: "center",
+    justifySelf: "center",
+    fontSize: "18px",
+  };
+
+  const boton2 = {
+    height: "90x",
+    width: "40%",
+    borderRadius: "25px",
+    alignSelf: "center",
+    justifySelf: "center",
+    fontSize: "18px",
+  };
+
+  const isFlexButton = {
+    display: "flex",
+    justifyContent: "space-around",
+  };
+
   const nombre = useRef();
   const nombreUsuario = useRef();
   const apellido = useRef();
   const documento = useRef();
   const email = useRef();
 
-
   const busca = () => {
-    console.log(nombre.current.value)
-  }
+    console.log(nombre.current.value);
+  };
+
+  const habilitarEdicion = () => {
+    if (nombreUsuario.current.disabled) {
+      nombreUsuario.current.disabled = false;
+      apellido.current.disabled = false;
+      documento.current.disabled = false;
+      email.current.disabled = false;
+    } else {
+      nombreUsuario.current.disabled = true;
+      apellido.current.disabled = true;
+      documento.current.disabled = true;
+      email.current.disabled = true;
+    }
+  };
+  const editarUsuario = () => {};
+  const eliminarUsuario = () => {};
 
   return (
     <div style={background}>
@@ -71,15 +117,33 @@ export default function Usuarios() {
                 id="input-btn-2"
                 align="end"
                 onClick={busca}
-              >Buscar</Button>
+              >
+                Buscar
+              </Button>
             </InputGroup>
 
-            <Card style={Seccion1}>
+            <Card>
               <Card.Header class="text-centered  text-justify">
                 <h2 style={h2}>Información de Usuario</h2>
               </Card.Header>
               <Card.Body>
-              <InputGroup className="mb-3" controlId="formHorizontalPeaje">
+                <Row>
+                  <Col sm={10} style={isFlex}>
+                    <h3 style={h3}>Descripción</h3>
+                  </Col>
+                  <Col sm={2} style={isFlex2}>
+                    <Button
+                      variant="outline-success"
+                      id="button-addon1"
+                      style={textRight}
+                      onClick={habilitarEdicion}
+                    >
+                      Editar
+                    </Button>
+                  </Col>
+                </Row>
+                <br />
+                <InputGroup className="mb-3" controlId="formHorizontalPeaje">
                   <Form.Label column sm={2}>
                     Nombre
                   </Form.Label>
@@ -135,134 +199,107 @@ export default function Usuarios() {
                   </Col>
                 </InputGroup>
 
+                <br />
+                <div style={isFlexButton}>
+                  <Button
+                    variant="outline-success"
+                    style={boton1}
+                    onClick={editarUsuario}
+                  >
+                    Actualizar
+                  </Button>{" "}
+                  <Button
+                    variant="outline-danger"
+                    style={boton2}
+                    onClick={eliminarUsuario}
+                  >
+                    Eliminar
+                  </Button>{" "}
+                </div>
 
-                <Table>
-                  <tbody>
-                    <tr>
-                      <th scope="row">Nombre: </th>
-                      <FloatingLabel
-                        controlId="floatingTextarea"
-                        label=""
-                        className="mb-3"
-                      >
-                        <Form.Control
-                          as="textarea"
-                          placeholder=""
-                          style={{ width: "260px", height: "30px" }}
-                        />
-                      </FloatingLabel>
-                    </tr>
-                    <tr>
-                      <th scope="row">Consorcios: </th>
-                      <InputGroup className="mb-3">
-                        <FormControl
-                          aria-label="Text input with dropdown button"
-                          style={{ height: "38px", width: "200px" }}
-                        />
-                        <DropdownButton
-                          variant="outline-secondary"
-                          title=""
-                          id="input-group-dropdown-2"
-                          align="end"
-                        >
-                          <Dropdown.Item href="#">...</Dropdown.Item>
-                        </DropdownButton>
-                      </InputGroup>
-                    </tr>
-                    <tr>
-                      <th scope="row">Peajes: </th>
-                      <InputGroup className="mb-3">
-                        <FormControl
-                          aria-label="Text input with dropdown button"
-                          placeholder=""
-                        />
-                        <DropdownButton
-                          variant="outline-secondary"
-                          title=""
-                          id="input-group-dropdown-2"
-                          align="end"
-                        >
-                          <Dropdown.Item href="#">...</Dropdown.Item>
-                        </DropdownButton>
-                      </InputGroup>
-                    </tr>
-                  </tbody>
-                </Table>
+                <br />
+                <br />
+
+                <InputGroup>
+                  <Col xs={12} sm={12} lg={6}>
+                    <h2 style={h3}>Pagos realizados</h2>
+                    <br />
+                    <Table
+                      striped
+                      bordered
+                      hover
+                      style={{ textAlign: "center" }}
+                    >
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Fecha</th>
+                          <th>Medio de pago</th>
+                          <th style={{ width: "33%" }}>Valor</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>15/12/2021</td>
+                          <td>Tarjeta</td>
+                          <td>25.000</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>17/12/2021</td>
+                          <td>Efectivo</td>
+                          <td>50.000</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>19/12/2021</td>
+                          <td>Efectivo</td>
+                          <td>60.000</td>
+                        </tr>
+                      </tbody>
+                    </Table>
+                  </Col>
+                  <Col xs={12} sm={12} lg={1}></Col>
+                  <Col xs={12} sm={12} lg={5}>
+                    <h2 style={h3}>Recargas realizadas</h2>
+                    <br />
+                    <Table
+                      striped
+                      bordered
+                      hover
+                      style={{ textAlign: "center" }}
+                    >
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Fecha</th>
+                          <th style={{ width: "33%" }}>Valor</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>15/12/2021</td>
+                          <td>25.000</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>17/12/2021</td>
+                          <td>50.000</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>19/12/2021</td>
+                          <td>60.000</td>
+                        </tr>
+                      </tbody>
+                    </Table>
+                  </Col>
+                </InputGroup>
               </Card.Body>
             </Card>
             <br />
-
-            <Card style={Seccion2}>
-              <Card.Header
-                class="text-centered  text-justify"
-                style={titulosSeccion2}
-              >
-                <h2 style={h2}>Cobros recogidos por medio de pago</h2>
-              </Card.Header>
-              <Card.Body>
-                <Table>
-                  <tbody>
-                    <tr>
-                      <th scope="row">Efectivo: </th>
-                      <FloatingLabel
-                        controlId="floatingTextarea"
-                        label=""
-                        className="mb-3"
-                      >
-                        <Form.Control
-                          as="textarea"
-                          placeholder=""
-                          style={{ width: "260px", height: "30px" }}
-                        />
-                      </FloatingLabel>
-                    </tr>
-                    <tr>
-                      <th scope="row">Tarjeta: </th>
-                      <FloatingLabel
-                        controlId="floatingTextarea"
-                        label=""
-                        className="mb-3"
-                      >
-                        <Form.Control
-                          as="textarea"
-                          placeholder=""
-                          style={{ width: "260px", height: "30px" }}
-                        />
-                      </FloatingLabel>
-                    </tr>
-                  </tbody>
-                </Table>
-              </Card.Body>
-            </Card>
-
-            <br />
-
-            <Card style={Seccion3}>
-              <Card.Header style={titulosSeccion3}>
-                {" "}
-                <h2 style={h2}>Recargas realizadas</h2>
-              </Card.Header>
-              <Card.Body>
-                <Table>
-                  <tbody class="text-justify">
-                    <tr>
-                      <th scope="row">Recargas</th>
-                      <FloatingLabel
-                        controlId="floatingTextarea"
-                        label=""
-                        className="mb-3"
-                      >
-                        <Form.Control
-                          as="textarea"
-                          placeholder=""
-                          style={{ width: "260px", height: "20px" }}
-                        />
-                      </FloatingLabel>
-                    </tr>
-                  </tbody>
-                </Table>
-              </Card.Body>
-            </Card>
           </div>
         </StyledCard>
       </PagosStyled>

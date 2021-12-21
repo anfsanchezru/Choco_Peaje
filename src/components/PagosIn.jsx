@@ -59,6 +59,10 @@ export default function Peajes() {
     height: 3,
   };
 
+  const inputWidth = {
+    width: "auto"
+  }
+
   const placa = useRef();
   const usuarioConsulta = useRef();
   const vehiculoConsulta = useRef();
@@ -191,7 +195,7 @@ export default function Peajes() {
                   ref={usuarioConsulta}
                   disabled
                 />
-                <InputGroup.Text id="basic-addon1">Usuario</InputGroup.Text>
+                <InputGroup.Text id="basic-addon1" style={inputWidth}>Usuario</InputGroup.Text>
               </InputGroup>
 
               <InputGroup className="mb-3">
@@ -202,7 +206,7 @@ export default function Peajes() {
                   ref={vehiculoConsulta}
                   disabled
                 />
-                <InputGroup.Text id="basic-addon1">
+                <InputGroup.Text id="basic-addon1" style={inputWidth}>
                   Categoría del vehículo
                 </InputGroup.Text>
               </InputGroup>
@@ -215,7 +219,7 @@ export default function Peajes() {
                   ref={valorAPagar}
                   disabled
                 />
-                <InputGroup.Text id="basic-addon1">
+                <InputGroup.Text id="basic-addon1" style={inputWidth}> 
                   Valor a pagar
                 </InputGroup.Text>
               </InputGroup>
